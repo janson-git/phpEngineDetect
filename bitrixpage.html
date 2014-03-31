@@ -1,0 +1,1941 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+    <meta name="keywords" content="cms, система управления сайтом, корпоративный портал, интранет, intranet, движок сайта, разработка сайта" />
+    <link href="/bitrix/js/main/core/css/core_image.css?13656887326249" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/panel/main/popup.css?139583347522783" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/cache/css/1c/1c-bitrix-new/page_cec982f78607abdddf2fd9ad98af5eb1/page_cec982f78607abdddf2fd9ad98af5eb1_4a54df947c5caaa45175117142ba9bb2.css?13929907391590" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/cache/css/1c/1c-bitrix-new/kernel_main/kernel_main.css?139583348686966" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/cache/css/1c/1c-bitrix-new/kernel_socialservices/kernel_socialservices.css?13958334699024" type="text/css"  rel="stylesheet" />
+    <link href="/bitrix/cache/css/1c/1c-bitrix-new/template_863623e230ab3f38dc97c037c46bec09/template_863623e230ab3f38dc97c037c46bec09_4a6e4f6dc111b2c8c5fb0915b555040c.css?139357575779558" type="text/css"  data-template-style="true"  rel="stylesheet" />
+    <script type="text/javascript">if(!window.BX)window.BX={message:function(mess){if(typeof mess=='object') for(var i in mess) BX.message[i]=mess[i]; return true;}};</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','USER_ID':'','SERVER_TIME':'1395913181','SERVER_TZ_OFFSET':'14400','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'06d10a890e4a65ed954df88fd3313091','SITE_ID':'1c'});(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+
+    <script type="text/javascript" src="/bitrix/cache/js/1c/1c-bitrix-new/kernel_main/kernel_main.js?1395899394395615"></script>
+    <script type="text/javascript" src="/bitrix/js/main/core/core_image.js?136852975417944"></script>
+    <script type="text/javascript" src="/bitrix/cache/js/1c/1c-bitrix-new/kernel_socialservices/kernel_socialservices.js?13958334693032"></script>
+    <script type="text/javascript">BX.setCSSList(['/bitrix/js/main/core/css/core.css','/bitrix/js/main/core/css/core_tooltip.css','/bitrix/js/main/core/css/core_popup.css','/bitrix/js/main/core/css/core_date.css','/bitrix/js/main/core/css/core.css','/bitrix/js/main/core/css/core_popup.css','/bitrix/js/main/core/css/core_date.css','/bitrix/js/main/core/css/core_tooltip.css','/bitrix/js/socialservices/css/ss.css','/bitrix/js/socialservices/css/ss.css']); </script>
+    <script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core.js','/bitrix/js/main/core/core_fx.js','/bitrix/js/main/json/json2.min.js','/bitrix/js/main/core/core_ls.js','/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_window.js','/bitrix/js/main/utils.js','/bitrix/js/main/dd.js','/bitrix/js/main/core/core_popup.js','/bitrix/js/main/core/core_date.js','/bitrix/js/main/core/core_tooltip.js','/bitrix/js/main/rating_like.js','/bitrix/js/socialservices/ss.js','/bitrix/js/socialservices/ss.js']); </script>
+
+    <script type="text/javascript" src="/bitrix/cache/js/1c/1c-bitrix-new/template_701f1a7d93bce19a5a1bea95fbb638eb/template_701f1a7d93bce19a5a1bea95fbb638eb_68f289393805952f638caf4596ab2078.js?139341619859624"></script>
+
+    <script type="text/javascript" src="/bitrix/cache/js/1c/1c-bitrix-new/page_212bb6e929ccb6b2ed3302ab45f2e651/page_212bb6e929ccb6b2ed3302ab45f2e651_bcc823f8bbfde133308e6418665da75d.js?139299073913203"></script>
+
+    <meta name='yandex-verification' content='76ac0e897b73d7a2' />
+    <meta name='yandex-verification' content='78de3244dc038271' />
+    <meta name="google-site-verification" content="lTGOCVsd6HySq-2q5KkvFUmtHemf2oeAAvUq1G5m4d8" />
+    <meta name="google-site-verification" content="wyUPjBH91k463LznuOV6RIpAxed8nJp2Z9BnIeZ7UFE" />
+    <meta name="cmsmagazine" content="a7fc8e01b316ff145d46cf416a230356" />
+    <meta property="og:url" content="http://www.1c-bitrix.ru/" />
+    <meta property="og:image" content="http://www.1c-bitrix.ru/bitrix/components/bx/main.share/templates/.default/images/1c-bitrix-logo.gif" />
+
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js" async="true"></script>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?78" async="true" defer="defer"></script>
+    <title>1С-Битрикс - CMS, система управления интернет проектами, создание веб-проектов, система управления внутренним порталом компании</title>
+
+    <script type="text/javascript" async="true">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18655900-1']);
+        _gaq.push(['_setDomainName', '.1c-bitrix.ru']);
+        _gaq.push(['_setAllowLinker', true]);
+        // Поиск картинок
+        _gaq.push(['_addOrganic', 'images.yandex.ru', 'text', true]);
+        // Поиск по блогам
+        _gaq.push(['_addOrganic', 'blogsearch.google.ru', 'q', true]);
+        _gaq.push(['_addOrganic', 'blogs.yandex.ru', 'text', true]);
+        // Товарные площадки России
+        _gaq.push(['_addOrganic', 'market.yandex.ru', 'text', true]);
+        _gaq.push(['_addOrganic', 'price.ru', 'pnam']);
+        // Поисковики России
+        _gaq.push(['_addOrganic', 'go.mail.ru', 'q']);
+        _gaq.push(['_addOrganic', 'nova.rambler.ru', 'query']);
+        _gaq.push(['_addOrganic', 'nigma.ru', 's']);
+        _gaq.push(['_addOrganic', 'webalta.ru', 'q']);
+        _gaq.push(['_addOrganic', 'aport.ru', 'r']);
+        _gaq.push(['_addOrganic', 'poisk.ru', 'text']);
+        _gaq.push(['_addOrganic', 'km.ru', 'sq']);
+        _gaq.push(['_addOrganic', 'liveinternet.ru', 'ask']);
+        _gaq.push(['_addOrganic', 'quintura.ru', 'request']);
+        _gaq.push(['_addOrganic', 'search.qip.ru', 'query']);
+        _gaq.push(['_addOrganic', 'gde.ru', 'keywords']);
+        _gaq.push(['_addOrganic', 'gogo.ru', 'q']);
+        _gaq.push(['_addOrganic', 'ru.yahoo.com', 'p']);
+        _gaq.push(['_setCustomVar',1,'User','Visitors',2]);	_gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <!-- Яндекс.Метрика: Целевой звонок -->
+    <script type="text/javascript" src="//mc.yandex.ru/metrika/phone.js" class="counter76338" defer="defer"  async="true"></script>
+    <!-- /Яндекс.Метрика: Целевой звонок -->
+
+    <!--SmartPixel -->
+    <script type="text/javascript">
+        adroll_adv_id = "HHCSFNFOVBEZZHEWTN57J3";
+        adroll_pix_id = "N5C7CTGL2ZAVNBJ5PVFHYL";
+        (function () {
+            var oldonload = window.onload;
+            window.onload = function(){
+                __adroll_loaded=true;
+                var scr = document.createElement("script");
+                var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                scr.setAttribute('async', 'true');
+                scr.type = "text/javascript";
+                scr.src = host + "/j/roundtrip.js";
+                ((document.getElementsByTagName('head') || [null])[0] ||
+                        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+                if(oldonload){oldonload()}};
+        }());
+    </script>
+
+</head>
+<body>
+<div class="wrap" id="bx-all-page-content">
+<div class="wrap_tn_top_nav">
+    <div class="tn_top_nav">
+        <ul class="tn_top_nav_cn" id='tn_top_nav_cn'>
+            <li class="current" ><a href = "http://www.1c-bitrix.ru"> Клиентам </a></li>
+            <li  ><a href = "http://marketplace.1c-bitrix.ru"> Маркетплейс </a></li>
+            <li  ><a href = "http://dev.1c-bitrix.ru/"> Разработчикам </a></li>
+            <li  ><a href = "http://partners.1c-bitrix.ru"> Партнерам </a></li>
+            <li  ><a href = "http://ecommerce.1c-bitrix.ru"> Интернет-магазины </a></li>
+            <li class="more open"><a href="#">Ещё <span></span></a>
+                <ul>
+                    <li  ><a href="http://www.bitrix24.ru" target="_blank">Битрикс24									<span class="arrow"></span>
+                    </a>
+                    </li>
+                    <li  ><a href="http://www.1c-bitrix.ru/landing/eshop.php" target="_blank">Готовые интернет-магазины								</a>
+                    </li>
+                    <li  ><a href="http://1c.1c-bitrix.ru/" target="_blank">Интеграция с 1С								</a>
+                    </li>
+                    <li  ><a href="http://enterprise.1c-bitrix.ru/" target="_blank">Крупные проекты								</a>
+                    </li>
+                    <li  ><a href="http://socialintranet.ru?utm_source=1c-bitrix.ru&utm_medium=menu&utm_campaign=top" target="_blank">Блог о социальном интранете								</a>
+                    </li>
+                    <li  ><a href="http://prograbli.ru?utm_source=1c-bitrix.ru&utm_medium=menu&utm_campaign=top" target="_blank">ПроГрабли								</a>
+                    </li>
+                    <li  ><a href="http://formula.1c-bitrix.ru" target="_blank">Семинары "Формула сайта"								</a>
+                    </li>
+                    <li  ><a href="http://idea.1c-bitrix.ru/" target="_blank">Идея!								</a>
+                    </li>
+                    <li  ><a href="http://4d.1c-bitrix.ru" target="_blank">Bitrix4Developers								</a>
+                    </li>
+                    <li  ><a href="http://academy.1c-bitrix.ru" target="_blank">Академия "1С-Битрикс"								</a>
+                    </li>
+                    <li  ><a href="http://promo.1c-bitrix.ru/" target="_blank">Промо для партнеров								</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>				<ul class="tn_top_lg" id="tn_top_lg">
+        <li class="more"> <a class="flag ru"><span></span></a>
+            <ul>
+                <li><a href="http://1c-bitrix.ru/"><span class="flag ru"></span>Русский<span class="arrow"></span></a></li>										<li><a href="http://www.bitrixsoft.com/"><span class="flag en"></span>English</a></li>							<li><a href="http://bitrix.de/"><span class="flag de"></span>Deutsch</a></li>							<li><a href="http://1c-bitrix.ua/"><span class="flag ua"></span>Сайт в Украине</a></li>					</ul>
+        </li>
+    </ul>			</div>
+</div>
+<div class="wpap_hd_header">
+    <div class="hd_header">
+        <table>
+            <tr>
+                <td class="hd_logo">
+                    <a href="/">
+                        <h1>
+                            <img src="/bitrix/templates/1c-bitrix-new/images/logo.png" border="0" width="178" height="63" title="1С-Битрикс. Быстро. Просто. Эффективно."  />																</h1>
+                    </a>
+                </td> <!-- Тег h1 ставится только на главной странице -->
+                <td class="hd_slogan">
+							<span>
+								Быстро. Просто. Эффективно.							</span>
+                </td>
+                <td class="hd_signin">
+                    <div style="position:relative;">
+                        <span></span>
+                        <a onclick="return systemAuthFormComponent_openBlock()" href="#">Авторизация</a>
+                        <div id="hd_loginform_container" class="hd_loginform_container" style="display:none" >
+                            <div onclick="return systemAuthFormComponent_closeBlock()" class="hd_loginform_container_close"></div>
+                            <div class="hd_loginform">
+                                <div class="arrow"></div>
+                                <form name="system_auth_form76947" method="post" target="_top" action="/auth/">
+                                    <input type="hidden" name="backurl" value="/index.php" />
+                                    <input type="hidden" name="AUTH_FORM" value="Y" />
+                                    <input type="hidden" name="TYPE" value="AUTH" />
+                                    <input placeholder="Логин" id='USER_LOGIN_INPUT' tabindex="10" name="USER_LOGIN" value="" type="text"/>
+                                    <input placeholder="Пароль" name="USER_PASSWORD" tabindex="20" type="password"/>
+
+
+                                    <input type="checkbox" id="USER_REMEMBER" tabindex="40" name="USER_REMEMBER" value="Y" checked="checked" />
+                                    <label for="USER_REMEMBER">Запомнить меня</label><br /><br />
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input tabindex="50" type="submit" class="bt_green" value="Войти"/>
+                                            </td>
+                                            <td>
+                                                <noindex>
+                                                    <div style="text-align: left">
+                                                        <a href="/auth/?forgot_password=yes&amp;backurl=%2Findex.php" rel="nofollow">Забыли пароль?</a><br />
+                                                        <a href="/auth/?register=yes&amp;backurl=%2Findex.php" rel="nofollow">Регистрация</a>
+                                                    </div>
+                                                </noindex>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="bx-auth-lbl">Войти как пользователь:</div>
+                                    <div class="bx-auth-serv-icons">
+                                        <a title="ВКонтакте" href="javascript:void(0)" onclick="BxShowAuthFloat('VKontakte', 'form')"><i class="bx-ss-icon vkontakte"></i></a>
+                                        <a title="Мой Мир" href="javascript:void(0)" onclick="BxShowAuthFloat('MyMailRu', 'form')"><i class="bx-ss-icon mymailru"></i></a>
+                                        <a title="Twitter" href="javascript:void(0)" onclick="BxShowAuthFloat('Twitter', 'form')"><i class="bx-ss-icon twitter"></i></a>
+                                        <a title="Facebook" href="javascript:void(0)" onclick="BxShowAuthFloat('Facebook', 'form')"><i class="bx-ss-icon facebook"></i></a>
+                                        <a title="Google" href="javascript:void(0)" onclick="BxShowAuthFloat('GoogleOAuth', 'form')"><i class="bx-ss-icon google"></i></a>
+                                        <a title="Livejournal" href="javascript:void(0)" onclick="BxShowAuthFloat('Livejournal', 'form')"><i class="bx-ss-icon livejournal"></i></a>
+                                        <a title="Яндекс" href="javascript:void(0)" onclick="BxShowAuthFloat('YandexOpenID', 'form')"><i class="bx-ss-icon yandex"></i></a>
+                                        <a title="Mail.Ru" href="javascript:void(0)" onclick="BxShowAuthFloat('MailRuOpenID', 'form')"><i class="bx-ss-icon openid-mail-ru"></i></a>
+                                        <a title="Liveinternet" href="javascript:void(0)" onclick="BxShowAuthFloat('Liveinternet', 'form')"><i class="bx-ss-icon liveinternet"></i></a>
+                                        <a title="Blogger" href="javascript:void(0)" onclick="BxShowAuthFloat('Blogger', 'form')"><i class="bx-ss-icon blogger"></i></a>
+                                        <a title="OpenID" href="javascript:void(0)" onclick="BxShowAuthFloat('OpenID', 'form')"><i class="bx-ss-icon openid"></i></a>
+                                    </div>
+                                </form>
+                                <div style="display:none">
+                                    <div id="bx_auth_float" class="bx-auth-float">
+
+                                        <div class="bx-auth">
+                                            <form method="post" name="bx_auth_servicesform" target="_top" action="/index.php?login=yes">
+                                                <div class="bx-auth-title">Войти как пользователь</div>
+                                                <div class="bx-auth-note">Вы можете войти на сайт, если вы зарегистрированы на одном из этих сервисов:</div>
+                                                <div class="bx-auth-services">
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('VKontakte', 'form')" id="bx_auth_href_formVKontakte"><i class="bx-ss-icon vkontakte"></i><b>ВКонтакте</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('MyMailRu', 'form')" id="bx_auth_href_formMyMailRu"><i class="bx-ss-icon mymailru"></i><b>Мой Мир</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('Twitter', 'form')" id="bx_auth_href_formTwitter"><i class="bx-ss-icon twitter"></i><b>Twitter</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('Facebook', 'form')" id="bx_auth_href_formFacebook"><i class="bx-ss-icon facebook"></i><b>Facebook</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('GoogleOAuth', 'form')" id="bx_auth_href_formGoogleOAuth"><i class="bx-ss-icon google"></i><b>Google</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('Livejournal', 'form')" id="bx_auth_href_formLivejournal"><i class="bx-ss-icon livejournal"></i><b>Livejournal</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('YandexOpenID', 'form')" id="bx_auth_href_formYandexOpenID"><i class="bx-ss-icon yandex"></i><b>Яндекс</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('MailRuOpenID', 'form')" id="bx_auth_href_formMailRuOpenID"><i class="bx-ss-icon openid-mail-ru"></i><b>Mail.Ru</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('Liveinternet', 'form')" id="bx_auth_href_formLiveinternet"><i class="bx-ss-icon liveinternet"></i><b>Liveinternet</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('Blogger', 'form')" id="bx_auth_href_formBlogger"><i class="bx-ss-icon blogger"></i><b>Blogger</b></a></div>
+                                                    <div><a href="javascript:void(0)" onclick="BxShowAuthService('OpenID', 'form')" id="bx_auth_href_formOpenID"><i class="bx-ss-icon openid"></i><b>OpenID</b></a></div>
+                                                </div>
+                                                <div class="bx-auth-line"></div>
+                                                <div class="bx-auth-service-form" id="bx_auth_servform" style="display:none">
+                                                    <div id="bx_auth_serv_formVKontakte" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('https://oauth.vk.com/authorize?client_id=2234924&amp;redirect_uri=https://www.1c-bitrix.ru/index.php?auth_service_id=VKontakte&amp;scope=friends,video,offline&amp;response_type=code&amp;state=site_id%253D1c%2526backurl%253D%25252Findex.php%25253Fcheck_key%25253Da6ead1f4c0d27d1a73c3a1ae3d1cb0ed', 580, 400)" class="bx-ss-button vkontakte-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись VKontakte для входа на сайт.</span></div>
+                                                    <div id="bx_auth_serv_formMyMailRu" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('https://connect.mail.ru/oauth/authorize?client_id=602565&amp;redirect_uri=https://www.1c-bitrix.ru/index.php?auth_service_id=MyMailRu&amp;response_type=code&amp;state=site_id%3D1c%26backurl%3D%2Findex.php%3Fcheck_key%3Da6ead1f4c0d27d1a73c3a1ae3d1cb0ed', 580, 400)" class="bx-ss-button mymailru-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись Мой Мир@Mail.ru для входа на сайт.</span></div>
+                                                    <div id="bx_auth_serv_formTwitter" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('/index.php?auth_service_id=Twitter&amp;check_key=a6ead1f4c0d27d1a73c3a1ae3d1cb0ed', 800, 450)" class="bx-ss-button twitter-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись на Twitter.com для входа на сайт.</span></div>
+                                                    <div id="bx_auth_serv_formFacebook" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('https://www.facebook.com/dialog/oauth?client_id=171324696253486&amp;redirect_uri=https%3A%2F%2Fwww.1c-bitrix.ru%2Findex.php%3Fauth_service_id%3DFacebook%26check_key%3Da6ead1f4c0d27d1a73c3a1ae3d1cb0ed&amp;scope=email,user_birthday,publish_stream&amp;display=popup', 580, 400)" class="bx-ss-button facebook-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись на Facebook.com для входа на сайт.</span></div>
+                                                    <div id="bx_auth_serv_formGoogleOAuth" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('https://accounts.google.com/o/oauth2/auth?client_id=724303204859.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.1c-bitrix.ru%2Fbitrix%2Ftools%2Foauth%2Fgoogle.php&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&amp;response_type=code&amp;access_type=offline&amp;state=site_id%3D1c%26backurl%3D%252Findex.php%253Fcheck_key%253Da6ead1f4c0d27d1a73c3a1ae3d1cb0ed%26mode%3Dopener', 580, 400)" class="bx-ss-button google-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись Google для входа на сайт.</span></div>
+                                                    <div id="bx_auth_serv_formLivejournal" style="display:none">
+                                                        <span class="bx-ss-icon openid"></span>
+                                                        <input type="text" name="OPENID_IDENTITY_LIVEJOURNAL" value="" size="20" />
+                                                        <span>.livejournal.com</span>
+                                                        <input type="hidden" name="sessid" id="sessid" value="06d10a890e4a65ed954df88fd3313091" />
+                                                        <input type="hidden" name="auth_service_error" value="" />
+                                                        <input type="submit" class="button" name="" value="Войти" />
+                                                    </div>
+                                                    <div id="bx_auth_serv_formYandexOpenID" style="display:none">
+                                                        <span class="bx-ss-icon openid"></span>
+                                                        <input type="text" name="OPENID_IDENTITY_YANDEX" value="" size="20" />
+                                                        <span>@yandex.ru</span>
+                                                        <input type="hidden" name="sessid" id="sessid" value="06d10a890e4a65ed954df88fd3313091" />
+                                                        <input type="hidden" name="auth_service_error" value="" />
+                                                        <input type="submit" class="button" name="" value="Войти" />
+                                                    </div>
+                                                    <div id="bx_auth_serv_formMailRuOpenID" style="display:none">
+                                                        <span class="bx-ss-icon openid"></span>
+                                                        <input type="text" name="OPENID_IDENTITY_MAILRU" value="" size="20" />
+                                                        <span>@mail.ru</span>
+                                                        <input type="hidden" name="sessid" id="sessid" value="06d10a890e4a65ed954df88fd3313091" />
+                                                        <input type="hidden" name="auth_service_error" value="" />
+                                                        <input type="submit" class="button" name="" value="Войти" />
+                                                    </div>
+                                                    <div id="bx_auth_serv_formLiveinternet" style="display:none">
+                                                        <span class="bx-ss-icon openid"></span>
+                                                        <span>liveinternet.ru/users/</span>
+                                                        <input type="text" name="OPENID_IDENTITY_LIVEINTERNET" value="" size="15" />
+                                                        <input type="hidden" name="sessid" id="sessid" value="06d10a890e4a65ed954df88fd3313091" />
+                                                        <input type="hidden" name="auth_service_error" value="" />
+                                                        <input type="submit" class="button" name="" value="Войти" />
+                                                    </div>
+                                                    <div id="bx_auth_serv_formBlogger" style="display:none">
+                                                        <span class="bx-ss-icon openid"></span>
+                                                        <input type="text" name="OPENID_IDENTITY_BLOGGER" value="" size="20" />
+                                                        <span>.blogspot.com</span>
+                                                        <input type="hidden" name="sessid" id="sessid" value="06d10a890e4a65ed954df88fd3313091" />
+                                                        <input type="hidden" name="auth_service_error" value="" />
+                                                        <input type="submit" class="button" name="" value="Войти" />
+                                                    </div>
+                                                    <div id="bx_auth_serv_formOpenID" style="display:none">
+                                                        <span class="bx-ss-icon openid"></span>
+                                                        <span>OpenID:</span>
+                                                        <input type="text" name="OPENID_IDENTITY_OPENID" value="" size="30" />
+                                                        <input type="hidden" name="sessid" id="sessid" value="06d10a890e4a65ed954df88fd3313091" />
+                                                        <input type="hidden" name="auth_service_error" value="" />
+                                                        <input type="submit" class="button" name="" value="Войти" />
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="auth_service_id" value="" />
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td class="hd_cart"><span class="icon_cart"></span>
+                    <a href="/personal/order/basket.php" >Корзина <span>0</span></a>						</td>
+                <td class="hd_search">
+                    <form action="/search/">
+                        <div class="hd_search_box">
+                            <input type="text" name="q" id="title-search-input" autocomplete="off" placeholder="Поиск" />
+                            <input type="submit" value=""/>
+                        </div>
+                    </form>
+                    <div id="top-menu-search" style='position: relative;left:90px;'>
+                    </div>
+                    <script type="text/javascript">
+                        var jsControl = new JCTitleSearch({
+                            //'WAIT_IMAGE': '/bitrix/themes/.default/images/wait.gif',
+                            'AJAX_PAGE' : '/',
+                            'CONTAINER_ID': 'top-menu-search',
+                            'INPUT_ID': 'title-search-input',
+                            'MIN_QUERY_LEN': 2
+                        });
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="wrap_gn_general_nav">
+
+<div id="gn_general_nav" class="gn_general_nav">
+<ul id="ul_gn_general_nav">
+<li class="current" ><a href="/"><span></span></a></li> <!-- .current активный пункт меню -->
+<li  ><a href="/products/">Продукты</a>
+    <ul>
+        <li class="more" >
+            <a href="/products/cms/" >Управление сайтом</a>
+            <ul><li><a href="/products/cms/index.php">О продукте</a></li><li><a href="/products/cms/features/">Возможности</a></li><li><a href="/products/cms/editions/">Редакции</a></li><li><a href="/products/cms/editions/#tab-table-link">Сравнить редакции</a></li><li><a href="/products/cms/new/">Что нового в 14.0?</a></li><li><a href="/products/cms/projects/">Истории успеха</a></li><li><a href="/products/cms/hermitage.php">Интерфейс «Эрмитаж»</a></li><li><a href="/products/cms/1c/index.php">Интеграция с «1С»</a></li><li><a href="/products/cms/features/turnkey.php">Готовые решения</a></li><li><a href="/products/cms/demo.php">Пробная версия</a></li><li><a href="/products/cms/performance/">Производительность</a></li><li><a href="/products/cms/requirements.php">Технические требования</a></li><li><a href="/products/cms/multisite.php">Многосайтовость</a></li><li><a href="/products/cms/security/">Безопасность</a></li><li><a href="/products/cms/certificates.php">Сертификаты</a></li><li><a href="/products/cms/siteupdate.php">Обновление</a></li><li><a href="/support/faq/">Частые вопросы</a></li><li><a href="/products/cms/versions.php">История версий</a></li></ul>					</li>
+        <li class="more" >
+            <a href="/products/intranet/" >Корпоративный портал</a>
+            <ul><li><a href="/products/intranet/index.php">О продукте</a></li><li><a href="/products/intranet/features/index.php">Возможности</a></li><li><a href="/products/intranet/editions">Редакции</a></li><li><a href="/products/intranet/new/index.php">Что нового?</a></li><li><a href="/products/intranet/hermitage.php">Интерфейс «Эрмитаж»</a></li><li><a href="/products/intranet/1c/">Интеграция с 1С</a></li><li><a href="/products/intranet/demo.php">Пробная версия</a></li><li><a href="/products/intranet/deployment.php">Внедрение</a></li><li><a href="/products/intranet/requirements.php">Технические требования</a></li><li><a href="/products/intranet/projects/">Истории успеха</a></li><li><a href="/products/intranet/interview.php">Интервью с клиентами</a></li><li><a href="/products/intranet/features/multi.php">Многодепартаментность</a></li><li><a href="/products/intranet/performance/">Производительность</a></li><li><a href="/products/intranet/security/index.php">Безопасность</a></li><li><a href="/products/intranet/enterprise/">Enterprise 2.0</a></li><li><a href="/products/intranet/certificates.php">Сертификаты</a></li><li><a href="/products/intranet/siteupdate.php">Обновление</a></li><li><a href="/products/intranet/versions.php">История версий</a></li></ul>					</li>
+        <li class="" >
+            <a href="/products/bitrix24/" >Битрикс24 (Облачный сервис)</a>
+        </li>
+        <li class="more" >
+            <a href="/products/mobile/" >Мобильное приложение</a>
+            <ul><li><a href="/products/mobile/index.php">О продукте</a></li><li><a href="/products/mobile/demo.php">Владельцам сайтов</a></li><li><a href="/products/mobile/demo.php#tab-works-link">Пробная версия</a></li><li><a href="/products/mobile/adm.php">Администрирование</a></li></ul>					</li>
+        <li class="more" >
+            <a href="/products/certified/" >Сертифицированные продукты</a>
+            <ul><li><a href="/products/certified/index.php">Сертификаты ФСТЭК</a></li><li><a href="/products/certified/certification.php">О сертификации</a></li><li><a href="/products/certified/faq.php">Частые вопросы</a></li></ul>					</li>
+        <li class="" >
+            <a href="/products/env/" >Веб-окружение </a>
+        </li>
+        <li class="more" >
+            <a href="/products/vmbitrix/" >Виртуальная машина</a>
+            <ul><li><a href="/products/vmbitrix/index.php">О продукте</a></li><li><a href="/products/vmbitrix/setup.php">Запустить</a></li><li><a href="/products/vmbitrix/rent.php">Арендовать</a></li><li><a href="/products/vmbitrix/host.php">Хостерам</a></li></ul>					</li>
+    </ul>
+</li>
+<li  ><a href="/solutions/">Решения</a>
+    <ul>
+        <li class="" >
+            <a href="/solutions/index.php" >Решения 1С-Битрикс</a>
+        </li>
+        <li class="" >
+            <a href="/solutions/eshop/" >Интернет-магазины</a>
+        </li>
+        <li class="more" >
+            <a href="/solutions/gov/" >Решения для государственных организаций</a>
+            <ul><li><a href="/solutions/gov/index.php">О решениях</a></li><li><a href="/solutions/gov/site.php">Официальный сайт</a></li><li><a href="/solutions/gov/intranet.php">Внутренний портал</a></li><li><a href="/solutions/gov/projects/">Проекты </a></li></ul>					</li>
+        <li class="more" >
+            <a href="/solutions/med/" >Решения для здравоохранения</a>
+            <ul><li><a href="/solutions/med/med.php">Сайт медицинской организации</a></li><li><a href="/solutions/med/medportal.php">Портал органа управления здравоохранением</a></li></ul>					</li>
+        <li class="more" >
+            <a href="/solutions/edu/" >Решения для образования</a>
+            <ul><li><a href="/solutions/edu/university/">Внутренний портал учебного заведения</a></li><li><a href="/solutions/edu/edu_site/">Сайт учебного заведения</a></li><li><a href="/solutions/edu/school/">Сайт школы</a></li></ul>					</li>
+        <li class="" >
+            <a href="/solutions/conf/" >Сайт конференции</a>
+        </li>
+        <li class="" >
+            <a href="/solutions/informportal/" >Информационные порталы</a>
+        </li>
+        <li class="" >
+            <a href="/solutions/1c/" >Решения для 1С:Франчайзи</a>
+        </li>
+        <li class="" >
+            <a href="http://marketplace.1c-bitrix.ru/" >Каталог готовых решений</a>
+        </li>
+    </ul>
+</li>
+<li  ><a href="/download/">Скачать</a>
+    <ul>
+        <li class="" >
+            <a href="/download/index.php" >Файлы для загрузки</a>
+        </li>
+        <li class="" >
+            <a href="/download/cms.php" >Управление сайтом</a>
+        </li>
+        <li class="" >
+            <a href="/download/intranet.php" >Корпоративный портал</a>
+        </li>
+        <li class="" >
+            <a href="/download/gov.php" >Сайт и портал государственной организации</a>
+        </li>
+        <li class="more" >
+            <a href="/download/edu/" >Решения для образования</a>
+            <ul><li><a href="/download/edu/university.php">Внутренний портал учебного заведения</a></li><li><a href="/download/edu/edu_site.php">Сайт учебного заведения</a></li><li><a href="/download/edu/school.php">Сайт школы </a></li></ul>					</li>
+        <li class="" >
+            <a href="/download/conf.php" >Сайт конференции</a>
+        </li>
+        <li class="" >
+            <a href="/download/med.php" >Решения для здравоохранения</a>
+        </li>
+        <li class="" >
+            <a href="/download/vmbitrix.php" >Виртуальная машина</a>
+        </li>
+        <li class="" >
+            <a href="/download/franchise.php" >Сайт 1С-Франчайзи</a>
+        </li>
+    </ul>
+</li>
+<li  ><a href="/buy/">Купить</a>
+    <ul>
+        <li class="" >
+            <a href="/buy/index.php" >Выбрать продукт</a>
+        </li>
+        <li class="" >
+            <a href="/buy/cms.php" >Управление сайтом</a>
+        </li>
+        <li class="" >
+            <a href="/buy/intranet.php" >Корпоративный портал</a>
+        </li>
+        <li class="" >
+            <a href="/buy/mobile.php" >Мобильное приложение</a>
+        </li>
+        <li class="" >
+            <a href="/buy/gov.php" >Решения для государственных организаций</a>
+        </li>
+        <li class="more" >
+            <a href="/buy/edu/" >Решения для образования</a>
+            <ul><li><a href="/buy/edu/university.php">Внутренний портал учебного заведения</a></li><li><a href="/buy/edu/edu_site.php">Сайт учебного заведения</a></li><li><a href="/buy/edu/school.php">Сайт школы</a></li></ul>					</li>
+        <li class="" >
+            <a href="/buy/med.php" >Решения для здравоохранения</a>
+        </li>
+        <li class="" >
+            <a href="/buy/conf.php" >Сайт конференции</a>
+        </li>
+    </ul>
+</li>
+<li  ><a href="/partners/">Партнеры</a>
+    <ul>
+        <li class="" >
+            <a href="/partners/index.php" >Список партнеров</a>
+        </li>
+        <li class="" >
+            <a href="/personal/application/add.php" >Заказать проект</a>
+        </li>
+        <li class="" >
+            <a href="/partners/hosting.php" >Хостинг</a>
+        </li>
+        <li class="" >
+            <a href="/partners/promo/index.php" >Акции партнеров</a>
+        </li>
+        <li class="" >
+            <a href="http://partners.1c-bitrix.ru/personal/" >Для партнеров</a>
+        </li>
+        <li class="" >
+            <a href="http://partners.1c-bitrix.ru/program/partner_types.php" >Стать партнером</a>
+        </li>
+    </ul>
+</li>
+<li  ><a href="/support/">Центр поддержки</a>
+    <ul>
+        <li class="" >
+            <a href="/support/index.php" >Поддержка и обучение</a>
+        </li>
+        <li class="" >
+            <a href="/support/faq/" >Частые вопросы</a>
+        </li>
+        <li class="" >
+            <a href="http://dev.1c-bitrix.ru/docs/" >Документация</a>
+        </li>
+        <li class="" >
+            <a href="http://academy.1c-bitrix.ru/learning/index.php" >Обучение</a>
+        </li>
+        <li class="" >
+            <a href="http://dev.1c-bitrix.ru/learning/" >Онлайн-курсы</a>
+        </li>
+        <li class="more" >
+            <a href="/support/customers/" >Для клиентов</a>
+            <ul><li><a href="/support/customers/index.php">Мой кабинет</a></li><li><a href="/personal/order/">Заказы</a></li><li><a href="/support/key_info.php">Проверка ключа</a></li><li><a href="/support/customers/ticket.php">Мои обращения</a></li><li><a href="/support/customers/ticket.php?show_wizard=Y">Задать вопрос</a></li><li><a href="/personal/order/basket.php">Корзина</a></li><li><a href="/support/customers/subscribe.php">Подписка</a></li><li><a href="/support/customers/sources.php">Дистрибутивы для PHP</a></li><li><a href="/support/customers/sources_net.php">Дистрибутивы для ASP.NET</a></li><li><a href="/support/customers/sertificates.php">Сертификаты</a></li><li><a href="/personal/application/">Заявки на разработку</a></li></ul>					</li>
+        <li class="" >
+            <a href="/support/partners.php" >Для партнеров</a>
+        </li>
+        <li class="" >
+            <a href="/support/expertlab.php" >Экспертная лаборатория</a>
+        </li>
+    </ul>
+</li>
+<li  ><a href="/about/">Компания</a>
+    <ul>
+        <li class="" >
+            <a href="/about/index.php" >1С-Битрикс</a>
+        </li>
+        <li class="" >
+            <a href="/about/life/" >Жизнь</a>
+        </li>
+        <li class="" >
+            <a href="/about/life/events.php" >Мероприятия</a>
+        </li>
+        <li class="" >
+            <a href="/about/life/photo/" >Фотографии</a>
+        </li>
+        <li class="" >
+            <a href="/blog/" >Блоги</a>
+        </li>
+        <li class="" >
+            <a href="/about/presskit.php" >Для прессы</a>
+        </li>
+        <li class="" >
+            <a href="/about/job.php" >Вакансии</a>
+        </li>
+        <li class="" >
+            <a href="/about/ukraine-1c-bitrix.php" >1С-Битрикс Украина</a>
+        </li>
+        <li class="" >
+            <a href="/about/kz-1c-bitrix.php" >1С-Битрикс Казахстан</a>
+        </li>
+        <li class="" >
+            <a href="/about/contacts.php" >Контакты</a>
+        </li>
+    </ul>
+</li>
+<li  ><a href="/tv/">ТВ</a>
+    <ul>
+        <li class="" >
+            <a href="/tv/index.php" >Каналы 1С-Битрикс.ТВ</a>
+        </li>
+        <li class="" >
+            <a href="/tv/cms.php" >Управление сайтом</a>
+        </li>
+        <li class="" >
+            <a href="/tv/cp.php" >«Битрикс24» в коробке»</a>
+        </li>
+        <li class="" >
+            <a href="/tv/webinar.php" >Вебинары</a>
+        </li>
+        <li class="" >
+            <a href="/tv/events.php" >Видеорепортажи</a>
+        </li>
+        <li class="" >
+            <a href="/tv/interviews.php" >Видеоинтервью</a>
+        </li>
+    </ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div style="text-align: center;"> <div class="section-page-banner"><div class="wrap_sl_slider_top">
+    <div id="top_banner_slides" class="sl_slider_top" style="position: relative; left: 0px">
+        <div><a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=http%3A%2F%2Fwww.bitrix24.ru%2F" style="background:url(/images/banners/b24_210314/01.jpg) no-repeat bottom center"></a></div>
+        <div><a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=http%3A%2F%2Fwww.bitrix24.ru%2F" style="background:url(/images/banners/b24_210314/02.jpg) no-repeat bottom center"></a></div>
+        <div><a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=http%3A%2F%2Fwww.bitrix24.ru%2F" style="background:url(/images/banners/b24_210314/03.jpg) no-repeat bottom center"></a></div>
+        <div><a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=http%3A%2F%2Fwww.bitrix24.ru%2F" style="background:url(/images/banners/b24_210314/04.jpg) no-repeat bottom center"></a></div>
+        <div><a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=http%3A%2F%2Fwww.bitrix24.ru%2F" style="background:url(/images/banners/b24_210314/05.jpg) no-repeat bottom center"></a></div>
+    </div>
+    <a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=" id="sl_next_slide"></a>
+    <a href="/bitrix/rk.php?id=1589&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B1589%5D+%5BHOME_PAGE_TOP_BANNER_NEW%5D+%CD%EE%E2%FB%E9+%C1%E8%F2%F0%E8%EA%F124+21.03.2014&amp;goto=" id="sl_prev_slide"></a>
+</div>
+    <div class="sl_pagination">
+        <ul id="top_banner_slides_pages"></ul>
+    </div>
+</div> </div>
+
+
+<div class="wrap_cn_container">
+
+
+<div class="cn_container">
+<div class="ln_lastnews">
+    <h2 class="dn">Последние новости</h2>
+    <ul>
+        <li>
+            <a href="/products/cms/">
+                <h3>Управление сайтом</h3>
+                <p>Профессиональная система управления сайтом</p>
+                <div class="ln_previewimg hcenter vcenter">
+                    <img src="/upload/iblock/92e/bus_143158.png" width="143" alt="" title="Управление сайтом"/>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/products/intranet/">
+                <h3> Битрикс24</h3>
+                <p>Полный комплект инструментов для организации работы компании</p>
+                <div class="ln_previewimg hcenter vcenter">
+                    <img src="/upload/iblock/ad0/b24_141.png" width="225" alt="" title=" Битрикс24"/>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/partners/order.php">
+                <h3>Нужен сайт?</h3>
+                <p>10267 партнеров в России и СНГ</p>
+                <div class="ln_previewimg hcenter vcenter">
+                    <img src="/upload/iblock/b03/4.png" width="225" alt="" title="Нужен сайт?"/>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="http://marketplace.1c-bitrix.ru">
+                <h3>Маркетплейс</h3>
+                <p>1000&#43; готовых веб-приложений для сайтов и корпоративных порталов</p>
+                <div class="ln_previewimg hcenter vcenter">
+                    <img src="/upload/iblock/81b/5.png" width="170" alt="" title="Маркетплейс"/>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div class="clearboth"></div>
+</div>
+
+
+<div class="lp_listproject_area">
+    <div class="lp_listproject">
+        <span class="arr_left" id="prev_br"></span>
+        <span class="arr_right" id="next_br"></span>
+        <div class="lp_listproject_block">
+            <div id="brands" style="margin-left: 281px; width: 100%; position: relative; left: 0px;">
+
+                <table>
+                    <tbody>
+                    <tr>
+                        <td><a href="/products/cms/projects/case/453887/#tab-cases-link"><img border="0" src="/upload/iblock/96d/zoi4.png" alt="Сочи-2014" ></a></td>
+                        <td><a href="/products/cms/projects/projects/130413/"><img border="0" src="/upload/iblock/9e2/xerox.png" alt="Xerox" ></a></td>
+                        <td><a href="/products/cms/projects/projects/276622/"><img border="0" src="/upload/iblock/aab/m4s.png" alt="МЧС России" ></a></td>
+                        <td><a href="/products/cms/projects/projects/261220/"><img border="0" src="/upload/iblock/d23/gazprom.png" alt="Газпром Нефть" ></a></td>
+                        <td><a href="/products/cms/projects/projects/266066/"><img border="0" src="/upload/iblock/847/ems.png" alt="EMS Почта России" ></a></td>
+                        <td><a href="/products/cms/projects/projects/99738/"><img border="0" src="/upload/iblock/114/alfa.png" alt="АльфаСтрахование" ></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                    <tr>							<td><a href="/products/cms/projects/case/273950/#tab-cases-link"><img border="0" src="/upload/iblock/32e/alrosa.png" alt="«АЛРОСА»" ></a></td>
+                        <td><a href="/products/cms/projects/case/333854/#tab-cases-link"><img border="0" src="/upload/iblock/5b1/searchengines.png" alt="Searchengines" ></a></td>
+                        <td><a href="/products/cms/projects/case/359652/#tab-cases-link"><img border="0" src="/upload/iblock/979/echo.png" alt="«Эхо Москвы» в Санкт-Петербурге" ></a></td>
+                        <td><a href="/products/cms/projects/case/452636/#tab-cases-link"><img border="0" src="/upload/iblock/17d/uyuterra.png" alt="Уютерра" ></a></td>
+                        <td><a href="/products/intranet/projects/cases/628072/#tab-cases-link"><img border="0" src="/upload/iblock/477/uraltrans.gif" alt="Уралтрансбанк" ></a></td>
+                        <td><a href="/products/cms/projects/case/389477/#tab-cases-link"><img border="0" src="/upload/iblock/4fc/savage.png" alt="SAVAGE " ></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                    <tr>							<td><a href="/products/cms/projects/projects/364098/"><img border="0" src="/upload/iblock/5f9/evroset.png" alt="Евросеть" ></a></td>
+                        <td><a href="/products/cms/projects/case/284279/#tab-cases-link"><img border="0" src="/upload/iblock/a53/tnt_noviy_region.png" alt="«ТНТ-Новый регион»" ></a></td>
+                        <td><a href="/products/cms/projects/projects/130929/"><img border="0" src="/upload/iblock/391/svyaznoy.png" alt="Связной" ></a></td>
+                        <td><a href="/products/cms/projects/case/186416/#tab-cases-link"><img border="0" src="/upload/iblock/4ae/cosmo.png" alt="Cosmopolitan" ></a></td>
+                        <td><a href="/products/cms/projects/case/171527/#tab-cases-link"><img border="0" src="/upload/iblock/baf/epson.png" alt="Epson" ></a></td>
+                        <td><a href="/products/intranet/projects/cases/525467/#tab-cases-link"><img border="0" src="/upload/iblock/8d5/metkombank.gif" alt="Меткомбанк" ></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                    <tr>							<td><a href="/products/cms/projects/case/312946/#tab-cases-link"><img border="0" src="/upload/iblock/fe7/gosduma.png" alt="Государственная дума" ></a></td>
+                        <td><a href="/products/intranet/projects/cases/446277/#tab-cases-link"><img border="0" src="/upload/iblock/dd8/ria.gif" alt="РИА Новости" ></a></td>
+                        <td><a href="/products/cms/projects/case/654671/#tab-cases-link"><img border="0" src="/upload/iblock/ffe/rostelekom.gif" alt="Ростелеком" ></a></td>
+                        <td><a href="/products/cms/projects/case/185115/#tab-cases-link"><img border="0" src="/upload/iblock/1b7/eldorado.png" alt="Эльдорадо" ></a></td>
+                        <td><a href="/products/cms/projects/case/210740/#tab-cases-link"><img border="0" src="/upload/iblock/d67/vtb.png" alt="ВТБ" ></a></td>
+                        <td><a href="/products/cms/projects/case/487551/#tab-cases-link"><img border="0" src="/upload/iblock/ce4/mts.jpg" alt="МТС" ></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="lp_arrow"><a href="/products/cms/projects/" ><span>85 000+</span> веб-проектов</a></div>
+    </div>
+</div>
+
+<div class="wb_webinars">
+    <h2><a href="http://ecommerce.1c-bitrix.ru/">Успешный интернет-магазин:</a><span style="font-weight: normal"> все для создания и развития</span></h2>
+    <div class="wb_scrollcontainer">
+        <div>
+            <ul style="width: 100%; height: 239px;">
+                <li>
+                    <div class="wb_ct">
+                        <div class="wb_info">
+                            <a href="http://ecommerce.1c-bitrix.ru/features/" class="ec_title" target="_blank">Готовые технологии &rarr;</a>
+                        </div>
+                        <div class="wb_ct_img">
+                            <a href="http://ecommerce.1c-bitrix.ru/features/" target="_blank">
+                                <img src="/images/gr/ec_on_1c/01.jpg" width="233" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="wb_ct">
+                        <div class="wb_info">
+                            <a href="http://ecommerce.1c-bitrix.ru/features/crm.php" class="ec_title" target="_blank">Интеграция с CRM &rarr;</a>
+                        </div>
+                        <div class="wb_ct_img">
+                            <a href="http://ecommerce.1c-bitrix.ru/features/crm.php" target="_blank">
+                                <img src="/images/gr/ec_on_1c/02.jpg" width="233" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="wb_ct">
+                        <div class="wb_info">
+                            <a href="http://ecommerce.1c-bitrix.ru/partners/" class="ec_title" target="_blank">Заказать разработку &rarr;</a>
+                        </div>
+                        <div class="wb_ct_img">
+                            <a href="http://ecommerce.1c-bitrix.ru/partners/" target="_blank">
+                                <img src="/images/gr/ec_on_1c/03.jpg" width="233" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="wb_ct">
+                        <div class="wb_info">
+                            <a href="http://ecommerce.1c-bitrix.ru/customers/" class="ec_title" target="_blank">20 000+ проектов &rarr;</a>
+                        </div>
+                        <div class="wb_ct_img">
+                            <a href="http://ecommerce.1c-bitrix.ru/customers/" target="_blank">
+                                <img src="/images/gr/ec_on_1c/04.jpg" width="233" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearboth"></div>
+</div>
+<div class="wb_webinars">
+<h2><a href="/about/life/events.php#tab-seminars-link" >Бесплатные семинары</a></h2>
+<a name="seminars"></a>
+<a href="" id="current_city">Санкт-Петербург</a>
+<div id="citylist" class="citylist">
+<h4>Выберите город</h4>
+<ul>
+    <li>
+        <span class="glossary">А</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C0%EB%EC%E0%F2%FB#seminars">Алматы</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C0%F0%F5%E0%ED%E3%E5%EB%FC%F1%EA#seminars">Архангельск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C0%F1%F2%E0%ED%E0#seminars">Астана</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C0%F1%F2%F0%E0%F5%E0%ED%FC#seminars">Астрахань</a></span>
+    </li>
+    <li>
+        <span class="glossary">Б</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C1%E0%F0%ED%E0%F3%EB#seminars">Барнаул</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C1%E5%EB%E3%EE%F0%EE%E4#seminars">Белгород</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C1%E5%F0%E4%F1%EA#seminars">Бердск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C1%E8%F0%EE%E1%E8%E4%E6%E0%ED#seminars">Биробиджан</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C1%EB%E0%E3%EE%E2%E5%F9%E5%ED%F1%EA#seminars">Благовещенск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C1%F0%FF%ED%F1%EA#seminars">Брянск</a></span>
+    </li>
+    <li>
+        <span class="glossary">В</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C2%EB%E0%E4%E8%E2%EE%F1%F2%EE%EA#seminars">Владивосток</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C2%EE%EB%E3%EE%E3%F0%E0%E4#seminars">Волгоград</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C2%EE%F0%EE%ED%E5%E6#seminars">Воронеж</a></span>
+    </li>
+    <li>
+        <span class="glossary">Д</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C4%ED%E5%EF%F0%EE%EF%E5%F2%F0%EE%E2%F1%EA#seminars">Днепропетровск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C4%EE%ED%E5%F6%EA#seminars">Донецк</a></span>
+    </li>
+    <li>
+        <span class="glossary">Е</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C5%EA%E0%F2%E5%F0%E8%ED%E1%F3%F0%E3#seminars">Екатеринбург</a></span>
+    </li>
+    <li>
+        <span class="glossary">З</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C7%E0%EF%EE%F0%EE%E6%FC%E5#seminars">Запорожье</a></span>
+    </li>
+    <li>
+        <span class="glossary">И</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C8%E2%E0%ED%EE%E2%EE#seminars">Иваново</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C8%E6%E5%E2%F1%EA+#seminars">Ижевск </a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C8%F0%EA%F3%F2%F1%EA+#seminars">Иркутск </a></span>
+    </li>
+    <li>
+        <span class="glossary">Й</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%C9%EE%F8%EA%E0%F0-%CE%EB%E0#seminars">Йошкар-Ола</a></span>
+    </li>
+    <li>
+        <span class="glossary">К</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E0%E7%E0%ED%FC#seminars">Казань</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E0%EB%E8%ED%E8%ED%E3%F0%E0%E4#seminars">Калининград</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E0%F0%E5%EB%E8%FF%2C+%E3.+%D1%EE%F0%F2%E0%E2%E0%EB%E0#seminars">Карелия, г. Сортавала</a></span>
+    </li>
+</ul>
+<ul>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E5%EC%E5%F0%EE%E2%EE#seminars">Кемерово</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E8%E5%E2#seminars">Киев</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E8%EC%F0%FB#seminars">Кимры</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%E8%F0%EE%E2#seminars">Киров</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%F0%E0%F1%ED%EE%E4%E0%F0#seminars">Краснодар</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%F0%E0%F1%ED%EE%FF%F0%F1%EA#seminars">Красноярск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CA%F3%F0%E3%E0%ED#seminars">Курган</a></span>
+    </li>
+    <li>
+        <span class="glossary">Л</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CB%E8%EF%E5%F6%EA#seminars">Липецк</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CB%F3%E3%E0%ED%F1%EA#seminars">Луганск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CB%FC%E2%EE%E2#seminars">Львов</a></span>
+    </li>
+    <li>
+        <span class="glossary">М</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CC%E0%F5%E0%F7%EA%E0%EB%E0+#seminars">Махачкала </a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CC%E8%ED%F1%EA#seminars">Минск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CC%EE%F1%EA%E2%E0#seminars">Москва</a></span>
+    </li>
+    <li>
+        <span class="glossary">Н</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CD%E8%E6%ED%E8%E9+%CD%EE%E2%E3%EE%F0%EE%E4#seminars">Нижний Новгород</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CD%E8%EA%EE%EB%E0%E5%E2#seminars">Николаев</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CD%EE%E2%E3%EE%F0%EE%E4#seminars">Новгород</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CD%EE%E2%EE%EA%F3%E7%ED%E5%F6%EA#seminars">Новокузнецк</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CD%EE%E2%EE%F1%E8%E1%E8%F0%F1%EA#seminars">Новосибирск</a></span>
+    </li>
+    <li>
+        <span class="glossary">О</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CE%E4%E5%F1%F1%E0#seminars">Одесса</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CE%EC%F1%EA#seminars">Омск</a></span>
+    </li>
+    <li>
+        <span class="glossary">П</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CF%E5%ED%E7%E0#seminars">Пенза</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CF%E5%F0%EC%FC#seminars">Пермь</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%CF%E5%F2%F0%EE%E7%E0%E2%EE%E4%F1%EA#seminars">Петрозаводск</a></span>
+    </li>
+    <li>
+        <span class="glossary">Р</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D0%E5%F1%EF%F3%E1%EB%E8%EA%E0+%C1%E5%EB%E0%F0%F3%F1%FC%2C+%E3.%C1%F0%E5%F1%F2#seminars">Республика Беларусь, г.Брест</a></span>
+    </li>
+</ul>
+<ul>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D0%E5%F1%EF%F3%E1%EB%E8%EA%E0+%CA%E0%F0%E5%EB%E8%FF%2C+%E3.+%CA%EE%F1%F2%EE%EC%F3%EA%F8%E0#seminars">Республика Карелия, г. Костомукша</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D0%EE%F1%F2%EE%E2-%CD%E0-%C4%EE%ED%F3#seminars">Ростов-На-Дону</a></span>
+    </li>
+    <li>
+        <span class="glossary">С</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%E0%EC%E0%F0%E0#seminars">Самара</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%E0%ED%EA%F2-%CF%E5%F2%E5%F0%E1%F3%F0%E3#seminars">Санкт-Петербург</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%E0%F0%E0%F2%EE%E2#seminars">Саратов</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%E5%E2%E0%F1%F2%EE%EF%EE%EB%FC#seminars">Севастополь</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%F2%E0%E2%F0%EE%EF%EE%EB%FC#seminars">Ставрополь</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%F3%EC%FB#seminars">Сумы</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D1%F3%F0%E3%F3%F2#seminars">Сургут</a></span>
+    </li>
+    <li>
+        <span class="glossary">Т</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D2%E0%F8%EA%E5%ED%F2#seminars">Ташкент</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D2%E2%E5%F0%FC#seminars">Тверь</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D2%EE%EB%FC%FF%F2%F2%E8#seminars">Тольятти</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D2%F3%EB%E0#seminars">Тула</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D2%FE%EC%E5%ED%FC#seminars">Тюмень</a></span>
+    </li>
+    <li>
+        <span class="glossary">У</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D3%EB%E0%ED-%D3%E4%FD#seminars">Улан-Удэ</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D3%EB%FC%FF%ED%EE%E2%F1%EA#seminars">Ульяновск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D3%F4%E0#seminars">Уфа</a></span>
+    </li>
+    <li>
+        <span class="glossary">Х</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D5%E0%E1%E0%F0%EE%E2%F1%EA#seminars">Хабаровск</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D5%E0%F0%FC%EA%EE%E2#seminars">Харьков</a></span>
+    </li>
+    <li>
+        <span class="glossary">Ч</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D7%E5%E1%EE%EA%F1%E0%F0%FB#seminars">Чебоксары</a></span>
+    </li>
+    <li>
+        <span class="glossary"></span>
+        <span class="cityname"><a href="/index.php?seminar_city=%D7%E5%EB%FF%E1%E8%ED%F1%EA#seminars">Челябинск</a></span>
+    </li>
+    <li>
+        <span class="glossary">Я</span>
+        <span class="cityname"><a href="/index.php?seminar_city=%DF%F0%EE%F1%EB%E0%E2%EB%FC#seminars">Ярославль</a></span>
+    </li>
+</ul>
+<div class="clearboth"></div>
+<span id="closemodal" class="closemodal"></span>
+</div>
+<div id="bg-modale" class="bg-modale"></div>
+<div class="wb_scrollcontainer">
+    <div id="slider_elements_11" style="width: 300%; position: relative; left: 0px;">
+        <ul style="width: 33.333333333333%;">
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">10.04.14<span class="dn">.2014</span></span>
+                        <div class="city">Санкт-Петербург</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/946720/#seminar_946720">
+                            <img src="/upload/iblock/817/sem180314spb.jpg" width="233" alt="" title="Польза и предубеждения: что дает компании внутренний портал и как сделать его рабочим"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/946720/#seminar_946720">Польза и предубеждения: что дает компании внутренний портал и как сделать его рабочим</a>
+                </h3>
+            </li>
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">28.03.14<span class="dn">.2014</span></span>
+                        <div class="city">Санкт-Петербург</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/953753/#seminar_953753">
+                            <img src="/upload/iblock/37d/infoservice280314.jpg" width="233" alt="" title="Битрикс24 для бизнеса. Легкий старт"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/953753/#seminar_953753">Битрикс24 для бизнеса. Легкий старт</a>
+                </h3>
+            </li>
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">27.03.14<span class="dn">.2014</span></span>
+                        <div class="city">Санкт-Петербург </div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/952195/#seminar_952195">
+                            <img src="/upload/iblock/c9d/semsoftbalance.jpg" width="233" alt="" title="Технологичный интернет-магазин: взгляд изнутри. Управление заказами, CRM, интеграция с «1С» на практических примерах"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/952195/#seminar_952195">Технологичный интернет-магазин: взгляд изнутри. Управление заказами, CRM, интеграция с «1С» на практических примерах</a>
+                </h3>
+            </li>
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">21.03.14<span class="dn">.2014</span></span>
+                        <div class="city">Санкт-Петербург</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/951157/#seminar_951157">
+                            <img src="/upload/iblock/953/sem210314.jpg" width="233" alt="" title="Cloud Day: Бизнес в облаках – легко и свободно"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/951157/#seminar_951157">Cloud Day: Бизнес в облаках – легко и свободно</a>
+                </h3>
+            </li>
+        </ul><ul style="width: 33.333333333333%; opacity: 0">
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">19.03.14<span class="dn">.2014</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/946384/#seminar_946384">
+                        <img src="/upload/iblock/a19/sem190314spb.jpg" width="233" alt="" title="Когда сайт становится бизнесом?"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/946384/#seminar_946384">Когда сайт становится бизнесом?</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">27.02.14<span class="dn">.2014</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/925376/#seminar_925376">
+                        <img src="/upload/iblock/48e/formulapiter.jpg" width="233" alt="" title="Формула сайта: Интернет-магазин от идеи до первой прибыли"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/925376/#seminar_925376">Формула сайта: Интернет-магазин от идеи до первой прибыли</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">21.02.14<span class="dn">.2014</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/921731/#seminar_921731">
+                        <img src="/upload/iblock/063/sem21022014.jpg" width="233" alt="" title="Битрикс24 для бизнеса. Легкий старт"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/921731/#seminar_921731">Битрикс24 для бизнеса. Легкий старт</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">18.02.14<span class="dn">.2014</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/920248/#seminar_920248">
+                        <img src="/upload/iblock/77c/sem18022014.jpg" width="233" alt="" title="Рабочая социальная сеть:  почему она необходима компании"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/920248/#seminar_920248">Рабочая социальная сеть:  почему она необходима компании</a>
+            </h3>
+        </li>
+    </ul><ul style="width: 33.333333333333%; opacity: 0">
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">06.02.14<span class="dn">.2014</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/917449/#seminar_917449">
+                        <img src="/upload/iblock/ae9/face.png" width="233" alt="" title="Форум Face to Face: 60 встреч в один день "/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/917449/#seminar_917449">Форум Face to Face: 60 встреч в один день </a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">12.12.13<span class="dn">.2013</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/873342/#seminar_873342">
+                        <img src="/upload/iblock/f8f/sem261113_msk.jpg" width="233" alt="" title="Создай свой офис в интернете"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/873342/#seminar_873342">Создай свой офис в интернете</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">11.12.13<span class="dn">.2013</span></span>
+                    <div class="city">Санкт-Петербург</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/871488/#seminar_871488">
+                        <img src="/upload/iblock/4d4/15301069_s.jpg" width="233" alt="" title="HR, продажи, совместная работа: как стать лучше без усилий "/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/871488/#seminar_871488">HR, продажи, совместная работа: как стать лучше без усилий </a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">05.12.13<span class="dn">.2013</span></span>
+                    <div class="city"></div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/856899/#seminar_856899">
+                        <img src="/upload/iblock/ac9/fsb_ua.jpg" width="232" alt="" title="«Всеукраинский семинар 1С-Битрикс» в вашем городе. Как обеспечить рост бизнеса на 400%"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/856899/#seminar_856899">«Всеукраинский семинар 1С-Битрикс» в вашем городе. Как обеспечить рост бизнеса на 400%</a>
+            </h3>
+        </li>
+    </ul>
+    </div>
+</div>
+<div class="clearboth"></div>
+<div class="wb_pagination">
+    <span id="wb_prev_11" class="wb_prev"></span>
+    <span id="wb_next_11" class="wb_next"></span>
+    <a class="wb_all bt_white" href="/about/life/events.php#tab-seminars-link">Все события</a>
+</div>
+<script>
+    var minPos_11 = 0;
+    var maxPos_11 = -200;
+    var offsetPos_11 = 100;
+    var seminarCity = 'Санкт-Петербург';
+    var openedCitylist = false;
+
+    var slider_11 = new SliderElements('slider_elements_11', minPos_11, maxPos_11, offsetPos_11);
+    BX.bind(BX('wb_prev_11'), 'click', slider_11.slide_move_right);
+    BX.bind(BX('wb_next_11'), 'click', slider_11.slide_move_left);
+</script> 		</div>
+
+<div class="wb_webinars">
+<h2><a href="/about/life/events.php#tab-webinars-link" >Бесплатные вебинары</a></h2>
+<div class="wb_scrollcontainer">
+    <div id="slider_elements_4007" style="width: 300%; position: relative; left: 0px;">
+        <ul style="width: 33.333333333333%; opacity: 1">
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">11.04<span class="dn">.2014</span></span>
+                        <div class="city">Онлайн</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/960848/#seminar_960848">
+                            <img src="/upload/iblock/959/sem110414.jpg" width="233" alt="" title="Готовые решения «1С-Битрикс» для образовательных учреждений»"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/960848/#seminar_960848">Готовые решения «1С-Битрикс» для образовательных учреждений»</a>
+                </h3>
+            </li>
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">09.04<span class="dn">.2014</span></span>
+                        <div class="city">Онлайн</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/960755/#seminar_960755">
+                            <img src="/upload/iblock/fa6/web090414.jpg" width="233" alt="" title="Интернет-магазин товаров для дома"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/960755/#seminar_960755">Интернет-магазин товаров для дома</a>
+                </h3>
+            </li>
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">28.03<span class="dn">.2014</span></span>
+                        <div class="city">Онлайн</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/943793/#seminar_943793">
+                            <img src="/upload/iblock/19b/web280314.jpg" width="233" alt="" title="Социальный интранет «Битрикс24»: эффективные рабочие коммуникации"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/943793/#seminar_943793">Социальный интранет «Битрикс24»: эффективные рабочие коммуникации</a>
+                </h3>
+            </li>
+            <li>
+                <div class="wb_ct">
+                    <div class="wb_info">
+                        <span class="date">21.03<span class="dn">.2014</span></span>
+                        <div class="city">Онлайн</div>
+                    </div>
+                    <div class="wb_ct_img">
+                        <a href="/about/life/seminars/943701/#seminar_943701">
+                            <img src="/upload/iblock/eb2/web210314.jpg" width="233" alt="" title="Интернет-магазин спортивных товаров: быстро начинаем успешный бизнес"/> <!-- Картинка 233х96 -->
+                        </a>
+                    </div>
+                </div>
+                <h3>
+                    <a href="/about/life/seminars/943701/#seminar_943701">Интернет-магазин спортивных товаров: быстро начинаем успешный бизнес</a>
+                </h3>
+            </li>
+        </ul><ul style="width: 33.333333333333%; opacity: 0">
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">19.03<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/943574/#seminar_943574">
+                        <img src="/upload/iblock/3b5/web190314.jpg" width="233" alt="" title="Успешный бизнес онлайн с «1С-Битрикс: Управление сайтом»"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/943574/#seminar_943574">Успешный бизнес онлайн с «1С-Битрикс: Управление сайтом»</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">18.03<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/942430/#seminar_942430">
+                        <img src="/upload/iblock/649/web18032014.jpg" width="233" alt="" title="Сайт транспортной службы и такси"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/942430/#seminar_942430">Сайт транспортной службы и такси</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">14.03<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/942296/#seminar_942296">
+                        <img src="/upload/iblock/df1/web280214.jpg" width="233" alt="" title="Интернет-магазин ювелирных изделий и часов"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/942296/#seminar_942296">Интернет-магазин ювелирных изделий и часов</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">13.03<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/945767/#seminar_945767">
+                        <img src="/upload/iblock/dd6/online_b24_130314.png" width="233" alt="" title="Приглашение на презентацию Битрикс24: 6 новых причин работать продуктивнее!"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/945767/#seminar_945767">Приглашение на презентацию Битрикс24: 6 новых причин работать продуктивнее!</a>
+            </h3>
+        </li>
+    </ul><ul style="width: 33.333333333333%; opacity: 0">
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">13.03<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/932530/#seminar_932530">
+                        <img src="/upload/iblock/be0/web130314.jpg" width="233" alt="" title="Интернет-продвижение сайта турагентства самостоятельно"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/932530/#seminar_932530">Интернет-продвижение сайта турагентства самостоятельно</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">05.03<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/940040/#seminar_940040">
+                        <img src="/upload/iblock/70f/web270214.jpg" width="233" alt="" title="Мобильное приложение, или как удержать клиента"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/940040/#seminar_940040">Мобильное приложение, или как удержать клиента</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">27.02<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/920915/#seminar_920915">
+                        <img src="/upload/iblock/f80/web27022014.jpg" width="233" alt="" title="Готовые решения «1С-Битрикс» для государственных организаций"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/920915/#seminar_920915">Готовые решения «1С-Битрикс» для государственных организаций</a>
+            </h3>
+        </li>
+        <li>
+            <div class="wb_ct">
+                <div class="wb_info">
+                    <span class="date">25.02<span class="dn">.2014</span></span>
+                    <div class="city">Онлайн</div>
+                </div>
+                <div class="wb_ct_img">
+                    <a href="/about/life/seminars/920872/#seminar_920872">
+                        <img src="/upload/iblock/3b0/web25022014.jpg" width="233" alt="" title="Сайт ресторана и службы доставки еды: как создать и развивать"/> <!-- Картинка 233х96 -->
+                    </a>
+                </div>
+            </div>
+            <h3>
+                <a href="/about/life/seminars/920872/#seminar_920872">Сайт ресторана и службы доставки еды: как создать и развивать</a>
+            </h3>
+        </li>
+    </ul>
+    </div>
+</div>
+<div class="clearboth"></div>
+<div class="wb_pagination">
+    <span id="wb_prev_4007" class="wb_prev"></span>
+    <span id="wb_next_4007" class="wb_next"></span>
+    <a class="wb_all bt_white" href="/about/life/events.php#tab-webinars-link">Все события</a>
+</div>
+<script>
+    var minPos_4007 = 0;
+    var maxPos_4007 = -200;
+    var offsetPos_4007 = 100;
+
+    var slider_4007 = new SliderElements('slider_elements_4007', minPos_4007, maxPos_4007, offsetPos_4007);
+    BX.bind(BX('wb_prev_4007'), 'click', slider_4007.slide_move_right);
+    BX.bind(BX('wb_next_4007'), 'click', slider_4007.slide_move_left);
+</script> 		</div>
+
+<div class="ne_newsandevents">
+    <h2><a href="/about/life/#tab-news-link" >Новости и события</a></h2>
+
+
+    <div class="ne_container" style="overflow: hidden">
+        <div class="ne_Stickynews">
+		<span class="date">
+			5 февраля 2014 		</span> — <h3><a href="/about/life/news/921300/#news_921300">Итоги Международной Партнерской Зимней Конференции «1С-Битрикс» 2014</a></h3>
+        </div>
+        <div id="slider_elements_77471" style="width: 300%; position: relative; left: 0px;">
+            <ul style="width: 33.333333333333%; opacity: 1">
+                <li>
+                    <a href="/about/life/news/958507/#news_958507" class="ne_previewimg">
+                        <span><img src="/upload/iblock/f31/news210314.jpg" alt="" title="Фирма «1С» в партнерстве с «1С-Битрикс» провела первый тур Олимпиады по программированию среди студентов" width="200"/></span>
+                    </a>
+													<span class="date">
+					<div class="news_params">24 марта 2014 </div>				</span>
+                    <h3><a href="/about/life/news/958507/#news_958507">Фирма «1С» в партнерстве с «1С-Битрикс» провела первый тур Олимпиады по программированию среди студентов</a></h3>
+                </li>
+                <li>
+                    <a href="/about/life/news/959908/#news_959908" class="ne_previewimg">
+                        <span><img src="/upload/iblock/c36/dig240314.jpg" alt="" title="Новинки Маркетплейс: выпуск #12.2014" width="200"/></span>
+                    </a>
+													<span class="date">
+					<div class="news_params">24 марта 2014 </div>				</span>
+                    <h3><a href="/about/life/news/959908/#news_959908">Новинки Маркетплейс: выпуск #12.2014</a></h3>
+                </li>
+                <li>
+                    <a href="/about/life/news/958120/#news_958120" class="ne_previewimg">
+                        <span><img src="/upload/iblock/52c/zsko_news.png" alt="" title="«Медиа-Сервис» и «1С-Битрикс» запустили мобильное приложение сайта Законодательного собрания Кировской области" width="200"/></span>
+                    </a>
+													<span class="date">
+					<div class="news_params">21 марта 2014 </div>				</span>
+                    <h3><a href="/about/life/news/958120/#news_958120">«Медиа-Сервис» и «1С-Битрикс» запустили мобильное приложение сайта Законодательного собрания Кировской области</a></h3>
+                </li>
+                <li>
+                    <a href="/about/life/news/956362/#news_956362" class="ne_previewimg">
+                        <span><img src="/upload/iblock/327/news200314ua.jpg" alt="" title="«1С-Битрикс» в Украине: объем продаж за 2013 год вырос на 94%" width="200"/></span>
+                    </a>
+													<span class="date">
+					<div class="news_params">20 марта 2014 </div>				</span>
+                    <h3><a href="/about/life/news/956362/#news_956362">«1С-Битрикс» в Украине: объем продаж за 2013 год вырос на 94%</a></h3>
+                </li>
+                <li>
+                    <a href="/about/life/news/956058/#news_956058" class="ne_previewimg">
+                        <span><img src="/upload/iblock/154/news190314.jpg" alt="" title="Выбираем лучшего журналиста в сфере e-commerce: голосуем за главного редактора Prograbli.ru Марию Сысойкину!" width="200"/></span>
+                    </a>
+													<span class="date">
+					<div class="news_params">19 марта 2014 </div>				</span>
+                    <h3><a href="/about/life/news/956058/#news_956058">Выбираем лучшего журналиста в сфере e-commerce: голосуем за главного редактора Prograbli.ru Марию Сысойкину!</a></h3>
+                </li>
+            </ul><ul style="width: 33.333333333333%; opacity: 0">
+            <li>
+                <a href="/about/life/news/954490/#news_954490" class="ne_previewimg">
+                    <span><img src="/upload/iblock/272/news180314_hh_logo.jpg" alt="" title="HR-специалисту на заметку: работать с hh.ru теперь можно через «Битрикс24» " width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">18 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/954490/#news_954490">HR-специалисту на заметку: работать с hh.ru теперь можно через «Битрикс24» </a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/954251/#news_954251" class="ne_previewimg">
+                    <span><img src="/upload/iblock/8fe/news180314.jpg" alt="" title="Конференция «Интернет-магазины: стратегии роста»: 33 совета растущим интернет-магазинам" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">18 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/954251/#news_954251">Конференция «Интернет-магазины: стратегии роста»: 33 совета растущим интернет-магазинам</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/953894/#news_953894" class="ne_previewimg">
+                    <span><img src="/upload/iblock/f0b/dig170314.jpg" alt="" title="Новинки Маркетплейс: выпуск #11.2014" width="198"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">17 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/953894/#news_953894">Новинки Маркетплейс: выпуск #11.2014</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/951084/#news_951084" class="ne_previewimg">
+                    <span><img src="/upload/iblock/93c/b24130314.jpg" alt="" title="Обновленный  «Битрикс24»: улучшенные приложения для смартфонов и компьютеров, масштабное улучшение облачной инфраструктуры" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">13 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/951084/#news_951084">Обновленный  «Битрикс24»: улучшенные приложения для смартфонов и компьютеров, масштабное улучшение облачной инфраструктуры</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/949142/#news_949142" class="ne_previewimg">
+                    <span><img src="/upload/iblock/432/dig110314.jpg" alt="" title="Новинки Маркетплейс: выпуск #10.2014" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">11 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/949142/#news_949142">Новинки Маркетплейс: выпуск #10.2014</a></h3>
+            </li>
+        </ul><ul style="width: 33.333333333333%; opacity: 0">
+            <li>
+                <a href="/about/life/news/948052/#news_948052" class="ne_previewimg">
+                    <span><img src="/upload/iblock/92d/8march.jpg" alt="" title="С праздником весны вас, милые женщины!" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">7 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/948052/#news_948052">С праздником весны вас, милые женщины!</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/947021/#news_947021" class="ne_previewimg">
+                    <span><img src="/upload/iblock/e26/alfabank_icon_news.jpg" alt="" title="Новый сайт ЗАО «Альфа-Банк» (Беларусь) на платформе «1С-Битрикс»" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">6 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/947021/#news_947021">Новый сайт ЗАО «Альфа-Банк» (Беларусь) на платформе «1С-Битрикс»</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/945732/#news_945732" class="ne_previewimg">
+                    <span><img src="/upload/iblock/38d/onlineb24_130314.png" alt="" title="Приглашение на презентацию Битрикс24: 6 новых причин работать продуктивнее!" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">5 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/945732/#news_945732">Приглашение на презентацию Битрикс24: 6 новых причин работать продуктивнее!</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/943973/#news_943973" class="ne_previewimg">
+                    <span><img src="/upload/iblock/79d/dig030314.jpg" alt="" title="Новинки Маркетплейс: выпуск #09.2014" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">3 марта 2014 </div>				</span>
+                <h3><a href="/about/life/news/943973/#news_943973">Новинки Маркетплейс: выпуск #09.2014</a></h3>
+            </li>
+            <li>
+                <a href="/about/life/news/938999/#news_938999" class="ne_previewimg">
+                    <span><img src="/upload/iblock/3f1/ibs_news.jpg" alt="" title="Новый сайт компании IBS на платформе «1С-Битрикс»" width="200"/></span>
+                </a>
+													<span class="date">
+					<div class="news_params">25 февраля 2014 </div>				</span>
+                <h3><a href="/about/life/news/938999/#news_938999">Новый сайт компании IBS на платформе «1С-Битрикс»</a></h3>
+            </li>
+        </ul>
+        </div>
+        <div class="clearboth"></div>
+        <div class="ne_pagination">
+            <a id="ne_prev_77471" class="ne_prev"></a>
+            <a id="ne_next_77471" class="ne_next"></a>
+            <a href="http://www.1c-bitrix.ru/about/life/#tab-subscribe-link" class="bt_red dib subscr">Подписаться на рассылки</a>
+            <a class="ne_all bt_white" href="/about/life/#tab-news-link">Все события</a>
+        </div>
+    </div>
+    <script>
+        var minPos_77471 = 0;
+        var maxPos_77471 = -200;
+        var offsetPos_77471 = 100;
+
+        var slider_77471 = new SliderElements('slider_elements_77471', minPos_77471, maxPos_77471, offsetPos_77471);
+        BX.bind(BX('ne_prev_77471'), 'click', slider_77471.slide_move_right);
+        BX.bind(BX('ne_next_77471'), 'click', slider_77471.slide_move_left);
+    </script> 		</div>
+
+<div class="bg_blogs">
+    <h2><a href="/blog/">Блоги</a></h2>
+    <div class="wb_scrollcontainer">
+        <div id="slider_elements_5084" style="width: 200%; position: relative; left: 0px;">
+            <ul style="width: 50%; opacity: 1; float: left">
+                <li>
+                    <div class="bg_avatar">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/product_features/the-longawaited-master-solutions.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/811263/c8042d925d6656dd077f15192d13bb8f/main/4fe/4fea8e99ea8ccf56a3699ec01a3b4a11/myth.jpg" width="96" height="96" alt="" border="0"></a>
+                    </div>
+                    <div class="bg_post">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/product_features/the-longawaited-master-solutions.php"><span class="author">Юрий Волошин</span></a>
+                        <h3>
+                            <a href="//dev.1c-bitrix.ru/community/blogs/product_features/the-longawaited-master-solutions.php">
+                                Долгожданный «Мастер Решений»						</a>
+                        </h3>
+                        <span class="date">14 Марта 2014</span>
+                    </div>
+                    <div class="clearboth"></div>
+                </li>
+                <li>
+                    <div class="bg_avatar">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/whats-new-bitrix24-.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/720125/c8042d925d6656dd077f15192d13bb8f/main/702/7025654a01c1d32ec62192494a3717e8/avatar.png" width="96" height="96" alt="" border="0"></a>
+                    </div>
+                    <div class="bg_post">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/whats-new-bitrix24-.php"><span class="author">Екатерина Шеленкова</span></a>
+                        <h3>
+                            <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/whats-new-bitrix24-.php">
+                                Какие еще новинки приготовил Битрикс24?						</a>
+                        </h3>
+                        <span class="date">14 Марта 2014</span>
+                    </div>
+                    <div class="clearboth"></div>
+                </li>
+                <li>
+                    <div class="bg_avatar">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/howto/bitrix-xdebug-profiling.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/810037/c8042d925d6656dd077f15192d13bb8f/main/204/204615feda78fc36bbdefe65fdd5306a/DSC_0380_ready.JPG" width="96" height="96" alt="" border="0"></a>
+                    </div>
+                    <div class="bg_post">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/howto/bitrix-xdebug-profiling.php"><span class="author">Шаромов Денис</span></a>
+                        <h3>
+                            <a href="//dev.1c-bitrix.ru/community/blogs/howto/bitrix-xdebug-profiling.php">
+                                Почему страница долго открывается?						</a>
+                        </h3>
+                        <span class="date">14 Марта 2014</span>
+                    </div>
+                    <div class="clearboth"></div>
+                </li>
+                <li>
+                    <div class="bg_avatar">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/update-crm-search-of-duplicate.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/720125/c8042d925d6656dd077f15192d13bb8f/main/702/7025654a01c1d32ec62192494a3717e8/avatar.png" width="96" height="96" alt="" border="0"></a>
+                    </div>
+                    <div class="bg_post">
+                        <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/update-crm-search-of-duplicate.php"><span class="author">Екатерина Шеленкова</span></a>
+                        <h3>
+                            <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/update-crm-search-of-duplicate.php">
+                                Обновление CRM: расширенные права для компаний, система поиска дублей и другие приятные мелочи						</a>
+                        </h3>
+                        <span class="date">13 Марта 2014</span>
+                    </div>
+                    <div class="clearboth"></div>
+                </li>
+            </ul><ul style="width: 50%; opacity: 0; float: left">
+            <li>
+                <div class="bg_avatar">
+                    <a href="//dev.1c-bitrix.ru/community/blogs/product_features/using-and-customizing-the-catalog-component-version-14.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/811263/c8042d925d6656dd077f15192d13bb8f/main/4fe/4fea8e99ea8ccf56a3699ec01a3b4a11/myth.jpg" width="96" height="96" alt="" border="0"></a>
+                </div>
+                <div class="bg_post">
+                    <a href="//dev.1c-bitrix.ru/community/blogs/product_features/using-and-customizing-the-catalog-component-version-14.php"><span class="author">Юрий Волошин</span></a>
+                    <h3>
+                        <a href="//dev.1c-bitrix.ru/community/blogs/product_features/using-and-customizing-the-catalog-component-version-14.php">
+                            Использование и настройка каталожных компонентов 14 версии						</a>
+                    </h3>
+                    <span class="date">13 Марта 2014</span>
+                </div>
+                <div class="clearboth"></div>
+            </li>
+            <li>
+                <div class="bg_avatar">
+                    <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/updated-bitrix241303.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/720125/c8042d925d6656dd077f15192d13bb8f/main/702/7025654a01c1d32ec62192494a3717e8/avatar.png" width="96" height="96" alt="" border="0"></a>
+                </div>
+                <div class="bg_post">
+                    <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/updated-bitrix241303.php"><span class="author">Екатерина Шеленкова</span></a>
+                    <h3>
+                        <a href="//dev.1c-bitrix.ru/community/blogs/bitrix24/updated-bitrix241303.php">
+                            Обновленный Битрикс24 - Новые сценарии работы с документами на Диске						</a>
+                    </h3>
+                    <span class="date">13 Марта 2014</span>
+                </div>
+                <div class="clearboth"></div>
+            </li>
+            <li>
+                <div class="bg_avatar">
+                    <a href="/blog/Anna_Potapova/bitrix24_online.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/673070/c8042d925d6656dd077f15192d13bb8f/main/043/0439aa0955f91a3770a434c6f89602c5/annia.jpg" width="96" height="96" alt="" border="0"></a>
+                </div>
+                <div class="bg_post">
+                    <a href="/blog/Anna_Potapova/bitrix24_online.php"><span class="author">Анна Потапова</span></a>
+                    <h3>
+                        <a href="/blog/Anna_Potapova/bitrix24_online.php">
+                            13 марта, 11 утра. Онлайн-трансляция презентации обновлений Битрикс24!						</a>
+                    </h3>
+                    <span class="date">6 Марта 2014</span>
+                </div>
+                <div class="clearboth"></div>
+            </li>
+            <li>
+                <div class="bg_avatar">
+                    <a href="//dev.1c-bitrix.ru/community/blogs/Docs_and_other/update-the-documentation-in-february-2014.php"><img src="http://d31kda5x13ws3j.cloudfront.net/resize_cache/595970/c8042d925d6656dd077f15192d13bb8f/main/088/088a59a3812fab9e08a2cc8b1ced98aa/basyrov.jpg" width="96" height="96" alt="" border="0"></a>
+                </div>
+                <div class="bg_post">
+                    <a href="//dev.1c-bitrix.ru/community/blogs/Docs_and_other/update-the-documentation-in-february-2014.php"><span class="author">Роберт Басыров</span></a>
+                    <h3>
+                        <a href="//dev.1c-bitrix.ru/community/blogs/Docs_and_other/update-the-documentation-in-february-2014.php">
+                            Обновление документации в феврале 2014						</a>
+                    </h3>
+                    <span class="date">26 Февраля 2014</span>
+                </div>
+                <div class="clearboth"></div>
+            </li>
+        </ul>
+        </div>
+        <div class="clearboth"></div>
+        <div class="wb_pagination">
+            <span id="wb_prev_5084" class="wb_prev"></span>
+            <span id="wb_next_5084" class="wb_next"></span>
+            <a class="wb_all bt_white" href="/blog/">Все блоги</a>
+        </div>
+    </div>
+    <script>
+        var minPos_5084 = 0;
+        var maxPos_5084 = -100;
+        var offsetPos_5084 = 100;
+
+        var slider_5084 = new SliderElements('slider_elements_5084', minPos_5084, maxPos_5084, offsetPos_5084);
+        BX.bind(BX('wb_prev_5084'), 'click', slider_5084.slide_move_right);
+        BX.bind(BX('wb_next_5084'), 'click', slider_5084.slide_move_left);
+    </script>	</div>
+<div class="tw_line"></div>
+<div id="tw-image-ajax-twitter" class="tw-image-ajax-twitter"></div>
+<div id="tw-main-container" class="tw-main-container"></div>
+</div>
+<div class="bn_banners">
+    <a href="/bitrix/rk.php?id=1191&amp;event1=banner&amp;event2=click&amp;event3=fs_autumn_2013&amp;goto=http%3A%2F%2Fformula.1c-bitrix.ru" target="_blank" ><img alt="Формула сайта 2013"  title="Формула сайта 2013" src="/upload/rk/107/seminar1.gif" width="550" height="151" border="0" /></a>						<div class="bn_socialnetworks">
+    <div class="bn_facebook">
+        <h4>1C-Битрикс на Facebook</h4>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-like" data-href="https://facebook.com/1cbitrix" data-send="false" data-width="450" data-show-faces="true" data-font="arial"></div>
+    </div>
+
+    <div class="bn_otherssocialnetwork">
+        <h4>А также: <span class="dn">Мы в социальных сетях</span></h4>
+        <div class="bn_otherssocialnetwork_container">
+            <!-- vk -->
+            <div style='float:left;'>
+                <div id="vk_like"></div>
+            </div>
+
+            <!-- google +1 -->
+            <div style='float:left;'>
+                <g:plusone size="medium"></g:plusone>
+            </div>
+
+
+            <!-- twiter -->
+            <div style='padding-left:20px;float:left;'>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.1c-bitrix.ru" data-text="1С-Битрикс">Tweet</a>
+            </div>
+        </div>
+    </div>
+    <script async="true">BX.ready(SocialService.init);</script>
+</div>
+
+    <div class="clearboth"></div>
+</div>
+</div>
+</div>
+<div class="wrap_ft_footer">
+    <div class="ft_footer">
+
+        <div class="ft_nav">
+            <h3>Технологии</h3>
+            <ul>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/hermitage.php">Эрмитаж</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/mobile/">BitrixMobile</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/blog/rsv/2074.php">Автокеширование</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/siteupdate.php">SiteUpdate</a></h4></li>
+            </ul>
+        </div>
+
+        <div class="ft_nav">
+            <h3>Производительность</h3>
+            <ul>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/vmbitrix/">Виртуальная машина</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/env/">Веб-окружение</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/performance/#tab-test-link">Результаты тестов</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/partners/hosting.php">Выбрать хостинг</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/features/webcluster.php">Веб кластер</a></h4></li>
+            </ul>
+        </div>
+
+        <div class="ft_nav">
+            <h3>Безопасность</h3>
+            <ul>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/security/#tab-proactiv-link">Проактивная защита</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/security/#webav">Веб-антивирус</a></h4></li>
+                <li><h4><a href="http://www.1c-bitrix.ru/products/cms/security/#tab-autentification-link">Аутентификация</a></h4></li>
+            </ul>
+        </div>
+        <div class="ft_contacts">
+            <span class="tel">8-800-250-1860</span>
+            <a href="http://www.1c-bitrix.ru/about/contacts.php">Контакты</a>
+            <a href="http://www.1c-bitrix.ru/sitemap/">Карта сайта</a>
+            <ul class="ft_sodialnetwork">
+                <li class="fb"><a href="http://www.1c-bitrix.ru/bitrix/redirect.php?event1=facebook-out&event2=&event3=&goto=http%3A//www.facebook.com/1CBitrix" target="_blank"></a></li>
+                <li class="tw"><a href="http://www.1c-bitrix.ru/bitrix/redirect.php?event1=twitter-out&event2=&event3=&goto=http%3A//twitter.com/1C_Bitrix" target="_blank"></a></li>
+                <li class="vk"><a href="http://www.1c-bitrix.ru/bitrix/redirect.php?event1=vkontakte-out&event2=&event3=&goto=http%3A//vk.com/bitrix_1c" target="_blank"></a></li>
+                <li class="gp"><a href="http://www.1c-bitrix.ru/bitrix/redirect.php?event1=google-plus-1-out&event2=&event3=&goto=http%3A//plus.google.com/111119180387208976312" target="_blank"></a></li>
+                <li class="hb"><a href="http://www.1c-bitrix.ru/bitrix/redirect.php?event1=habrahabr-out&event2=&event3=&goto=http%3A//habrahabr.ru/company/bitrix/blog/" target="_blank"></a></li>
+                <li class="ig"><a href="http://www.1c-bitrix.ru/bitrix/redirect.php?event1=instagram-out&event2=&event3=&goto=http%3A//instagram.com/1cbitrix" target="_blank"></a></li>
+            </ul>
+
+            <span class="design_by"><a href="http://www.aic.ru/" target="_blank">Дизайн сайта&nbsp;&nbsp;&mdash; <img src="/bitrix/templates/1c-bitrix-new/images/aic.png" alt=""></a></span>
+            <!-- vCard / microformat
+Элементы с классом .dn - это скрытый контент для поисковых ботов
+Классы  у span необходимо сохранить -->
+            <div class="vcard dn">
+                <span class="fn org">1С-Битрикс</span>
+                <span class="url">http://www.1c-bitrix.ru</span>
+						<span class="tel">
+							<span class="type">Бесплатная линия</span>
+							<span class="value">8-800-250-18-60</span>
+						</span>
+						<span class="email">
+							<span class="type">Общие вопросы</span>
+							<span class="value">info@1c-bitrix.ru</span>
+						</span>
+						<span class="email">
+							<span class="type">Приобретение и лицензирование продуктов</span>:
+							<span class="value">sales@1c-bitrix.ru</span>
+						</span>
+						<span class="email">
+							<span class="type">Маркетинг/мероприятия/PR</span>
+							<span class="value">marketing@1c-bitrix.ru</span>
+						</span>
+						<span class="email">
+							<span class="type">Партнерская программа</span>
+							<span class="value">partners@1c-bitrix.ru</span>
+						</span>
+                <span class="workhours">Мы работаем с 10:00 до 19:00 по московскому времени.</span>
+
+						<span class="tel">
+							<span class="type">Офис в Москве</span>
+							<span class="value">+7 (495) 229-14-41</span>
+						</span>
+						<span class="adr">
+							<span class="type">Офис в Москве</span>
+							<span class="postal-code">127287</span>
+							<span class="country-name">Россия</span>
+							<span class="region">Московская область</span>
+							<span class="locality">Москва</span>
+							<span class="street-address">2-я Хуторская улица дом 38А строение 9</span>
+						</span>
+
+						<span class="tel">
+							<span class="type">Офис в Калининграде</span>
+							<span class="value">+7 (4012) 51-05-64</span>
+						</span>
+						<span class="adr">
+							<span class="type">Офис в Калининграде</span>
+							<span class="postal-code">236001</span>
+							<span class="country-name">Россия</span>
+							<span class="region">Калининградская область</span>
+							<span class="locality">Калининград</span>
+							<span class="street-address">Московский проспект 261</span>
+						</span>
+
+						<span class="email">
+							<span class="type">Офис в Киеве</span>
+							<span class="value">ukraine@1c-bitrix.ru</span>
+						</span>
+						<span class="tel">
+							<span class="type">Телефон в Киеве</span>
+							<span class="value">+3 (8044)221-55-33</span>
+						</span>
+						<span class="adr">
+							<span class="type">Офис в Киеве</span>
+							<span class="postal-code">01033</span>
+							<span class="country-name">Украина</span>
+							<span class="region">Калининградская область</span>
+							<span class="locality">Киев</span>
+							<span class="street-address">улица Шота Руставели 39/41</span>
+							<span class="extended-address">офис 1507</span>
+						</span>
+                <img class="logo" alt="" src="/bitrix/templates/1c-bitrix-new/images/vlogo.png"></img>
+            </div>
+            <!-- end vCard -->
+        </div>
+        <div class="clearboth"></div>
+        <div class="ft_copyright">
+            <p>© 2001-2014 «Битрикс», «1С-Битрикс». Работает на 1С-Битрикс: Управление сайтом.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img border="0" src="/bitrix/templates/1c-bitrix-new/images/16.png" title="Возрастная категория: от 16 лет и старше" alt="Контент для лиц от 16 лет и старше" style="padding-left:15px;">
+            </p>				</div>
+    </div>
+</div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    var yaParams = {/*Здесь параметры визита*/};
+</script>
+
+<div style="display:none;"><script type="text/javascript">
+    (function(w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter76338 = new Ya.Metrika({id:76338, enableAll: true, trackHash:true,params:window.yaParams||{ }});
+            }
+            catch(e) { }
+        });
+    })(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch_visor.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/76338" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

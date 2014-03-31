@@ -1,0 +1,904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+    <title>DataLife Engine - Движок для сайта, CMS система управления сайтом (контентом)</title>
+    <meta name="description" content="Официальный сайт скрипта DataLife Engine. Система управления сайтом. Движок для сайта" />
+    <meta name="keywords" content="cms, движок для сайта, система управления сайтом, разработка сайта, система управления контентом, Content Management System, DataLife Engine" />
+    <meta name="generator" content="DataLife Engine (http://dle-news.ru)" />
+    <link rel="search" type="application/opensearchdescription+xml" href="http://dle-news.ru/engine/opensearch.php" title="DataLife Engine - Движок для сайта, CMS система управления сайтом (контентом)" />
+    <link rel="alternate" type="application/rss+xml" title="DataLife Engine - Движок для сайта, CMS система управления сайтом (контентом)" href="http://dle-news.ru/rss.xml" />
+    <script type="text/javascript" src="/engine/classes/min/index.php?charset=windows-1251&amp;g=general&amp;12"></script>
+    <link rel="stylesheet" type="text/css" href="/engine/classes/min/index.php?charset=windows-1251&amp;f=/templates/DLEoffsite/css/style.css,/templates/DLEoffsite/css/engine.css&amp;11" />
+    <script language="javascript" type="text/javascript" src="/templates/DLEoffsite/js/images.js"></script>
+</head>
+<body onload="MM_preloadImages('/templates/DLEoffsite/images/dlet_bttn01_1.gif','/templates/DLEoffsite/images/dlet_bttn02_1.gif','/templates/DLEoffsite/images/dlet_bttn03_1.gif')">
+<div id="loading-layer" style="display:none">Загрузка. Пожалуйста, подождите...</div>
+<script type="text/javascript">
+    <!--
+    var dle_root       = '/';
+    var dle_admin      = '';
+    var dle_login_hash = '';
+    var dle_group      = 5;
+    var dle_skin       = 'DLEoffsite';
+    var dle_wysiwyg    = '0';
+    var quick_wysiwyg  = '0';
+    var dle_act_lang   = ["Да", "Нет", "Ввод", "Отмена", "Сохранить", "Удалить"];
+    var menu_short     = 'Быстрое редактирование';
+    var menu_full      = 'Полное редактирование';
+    var menu_profile   = 'Просмотр профиля';
+    var menu_send      = 'Отправить сообщение';
+    var menu_uedit     = 'Админцентр';
+    var dle_info       = 'Информация';
+    var dle_confirm    = 'Подтверждение';
+    var dle_prompt     = 'Ввод информации';
+    var dle_req_field  = 'Заполните все необходимые поля';
+    var dle_del_agree  = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+    var dle_spam_agree = 'Вы действительно хотите отметить пользователя как спамера? Это приведет к удалению всех его комментариев';
+    var dle_complaint  = 'Укажите текст вашей жалобы для администрации:';
+    var dle_big_text   = 'Выделен слишком большой участок текста.';
+    var dle_orfo_title = 'Укажите комментарий для администрации к найденной ошибке на странице';
+    var dle_p_send     = 'Отправить';
+    var dle_p_send_ok  = 'Уведомление успешно отправлено';
+    var dle_save_ok    = 'Изменения успешно сохранены. Обновить страницу?';
+    var dle_del_news   = 'Удалить статью';
+    var allow_dle_delete_news   = false;
+    //-->
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" valign="top" bgcolor="#F1EAD7" class="globack1"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="globack2">
+<tr>
+<td>&nbsp;</td>
+<td width="1252" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="25"><img src="/templates/DLEoffsite/images/spacer.gif" width="25" height="1" alt="" /></td>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td align="left" valign="top" class="head001"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="110" align="left" valign="top"><table width="110" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="57" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head002_1.gif" width="57" height="311" alt="" /></td>
+                    <td width="33" align="left" valign="top"><table width="33" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head002_3.gif" width="33" height="20" alt="" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top"><a href="/"><img src="/templates/DLEoffsite/images/dlet_head002_4.gif" width="33" height="30" border="0" alt="" /></a></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head002_5.gif" width="33" height="261" alt="" /></td>
+                        </tr>
+                    </table></td>
+                    <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head002_2.gif" width="20" height="311" alt="" /></td>
+                </tr>
+            </table></td>
+            <td width="207" align="left" valign="top" class="head003"><table width="207" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td height="128"><img src="/templates/DLEoffsite/images/spacer.gif" width="207" height="1" alt="" /></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top">
+
+
+
+
+                        <div style="padding-top:7px;"><form method="post" action=''>
+                            <input name="login" type="hidden" id="login" value="submit" />
+                            <table width="185" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="79" align="left" class="whtext"><strong>Логин:</strong></td>
+                                    <td width="106" align="right"><input name="login_name" type="text" class="a_field" style="width:100px" /></td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="5" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td width="79" align="left" class="whtext"><strong>Пароль:</strong></td>
+                                    <td width="106" align="right"><input name="login_password" type="password" class="a_field" style="width:100px" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="left"><table width="185" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td height="40" align="left" class="snvgator" style="line-height: 18px"><a href="http://dle-news.ru/index.php?do=register">Регистрация</a><br />
+                                                <a href="http://dle-news.ru/index.php?do=lostpassword">Напомнить пароль?</a></td>
+                                            <td width="64" align="right"><input name="image" type="image" src="/templates/DLEoffsite/images/dlet_bttn_login.gif" style="width:64px; height:24px; border:0" alt="Login" /></td>
+                                        </tr>
+                                    </table></td>
+                                </tr>
+                            </table>
+                        </form></div>
+                    </td>
+                </tr>
+            </table></td>
+            <td align="left" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="1" alt="" /></td>
+            <td width="592" align="right" valign="top"><table width="592" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td height="40" align="right" valign="top"><table width="555" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="260" height="40" align="left" class="setastext">&nbsp;</td>
+                            <td width="295" height="40" align="right"><form method="post" action=''>
+                                <input type="hidden" name="do" value="search" />
+                                <input type="hidden" name="subaction" value="search" />
+                                <table width="295" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="25" align="left"><img src="/templates/DLEoffsite/images/dlet_spanel1.gif" width="25" height="40" alt="" /></td>
+                                        <td width="180" align="left" class="spanel2"><input id="story" name="story" type="text" class="s_field" style="width:174px" /></td>
+                                        <td width="26" align="left"><img src="/templates/DLEoffsite/images/dlet_spanel3.gif" width="26" height="40" alt="" /></td>
+                                        <td width="64" align="right"><input type="image" style="width:64px; height:24px; border:0" src="/templates/DLEoffsite/images/dlet_bttn_search.gif" alt="Search" /></td>
+                                    </tr>
+                                </table>
+                            </form></td>
+                        </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_head005.gif" width="592" height="85" alt="" /></td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_head006.gif" width="592" height="60" alt="" /></td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_head007.gif" width="592" height="51" alt="" /></td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top"><table width="592" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="392" align="left" valign="top"><table width="392" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head009.gif" width="392" height="37" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" class="head010"><table width="392" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="8" align="left" valign="top">&nbsp;</td>
+                                            <td width="104" align="left" valign="top"><a href="/price.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('b1','','/templates/DLEoffsite/images/dlet_bttn01_1.gif',1)"><img src="/templates/DLEoffsite/images/dlet_bttn01_0.gif" width="104" height="28" name="b1" border="0" alt="" /></a></td>
+                                            <td width="16" align="left" valign="top">&nbsp;</td>
+                                            <td width="104" align="left" valign="top"><a href="/release/1590-datalife-engine-v101-final-release.html#download" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('b2','','/templates/DLEoffsite/images/dlet_bttn02_1.gif',1)"><img src="/templates/DLEoffsite/images/dlet_bttn02_0.gif" width="104" height="28" name="b2" border="0" alt="" /></a></td>
+                                            <td width="16" align="left" valign="top">&nbsp;</td>
+                                            <td width="124" align="left" valign="top"><a href="/demo.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('b3','','/templates/DLEoffsite/images/dlet_bttn03_1.gif',1)"><img src="/templates/DLEoffsite/images/dlet_bttn03_0.gif" width="124" height="28" name="b3" border="0" alt="" /></a></td>
+                                            <td width="20" align="left" valign="top">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="8" align="left" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="1" alt="" /></td>
+                                            <td width="104" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_shad01.gif" width="104" height="10" alt="" /></td>
+                                            <td width="16" align="left" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="1" alt="" /></td>
+                                            <td width="104" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_shad01.gif" width="104" height="10" alt="" /></td>
+                                            <td width="16" align="left" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="1" alt="" /></td>
+                                            <td width="124" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_shad02.gif" width="124" height="10" alt="" /></td>
+                                            <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="1" alt="" /></td>
+                                        </tr>
+                                    </table></td>
+                                </tr>
+                            </table></td>
+                            <td width="190" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_actual_dle_release_10_1.gif" width="190" height="75" alt="" /></td>
+                            <td width="10" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head008.gif" width="10" height="75" alt="" /></td>
+                        </tr>
+                    </table></td>
+                </tr>
+            </table></td>
+            <td width="30" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_head004.gif" width="30" height="311" alt="" /></td>
+        </tr>
+    </table></td>
+</tr>
+<tr>
+<td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="40" align="left" valign="bottom" class="col1"><img src="/templates/DLEoffsite/images/dlet_col1bott.gif" width="40" height="110" alt="" /></td>
+<td width="215" align="left" valign="top" class="col2"><table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo01"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">НАВИГАЦИЯ<br />
+                    ПО САЙТУ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td width="185" align="left" valign="top" class="nvgtxt" style="line-height: 18px">• &nbsp; <a href="/release/">Релизы</a><br />
+                    • &nbsp; <a href="/pressrelease/">Пресс релизы</a><br />
+                    • &nbsp; <a href="/modules/">Дополнительные модули</a><br />
+                    • &nbsp; <a href="/bags/">Обнаруженные уязвимости</a><br />
+                    <br />
+                    • &nbsp; <a href="/request.html">Системные требования</a><br />
+                    • &nbsp; <a href="/tips/">Полезные Советы</a><br />
+                    • &nbsp; <a href="/about.html">Возможности DataLife Engine</a><br />
+
+                    <br />
+                    • &nbsp; <a href="/video.html">Видеоинструкция по созданию</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="/video.html">сайта и установке скрипта</a><br />
+                    • &nbsp; <a href="/extras/uroki/">Уроки по созданию шаблонов</a><br />
+                    • &nbsp; <a href="/info/255-primery-pleerov-ispolzuemykh-skriptom.html">Мультмедийные возможности</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="/info/255-primery-pleerov-ispolzuemykh-skriptom.html" target="_blank">скрипта</a>
+                    <br />
+                    <br />
+                    • &nbsp; <a href="/licence.html">Лицензионное соглашение</a><br />
+                    • &nbsp; <a href="/price.html">Информация о покупке</a><br />
+                    • &nbsp; <a href="/support.html">Техническая поддержка</a><br />
+                    • &nbsp; <a href="/extras/online/index.html">Онлайн документация</a><br />
+                    • &nbsp; <a href="/faq.html">FAQ (Частые вопросы)</a><br />
+                    <br />
+                    • &nbsp; <a href="/index.php?do=feedback"><strong>Обратная связь</strong></a><br />
+                    • &nbsp; <a href="http://forum.dle-news.ru/">Форум технической поддержки</a><br />
+                    • &nbsp; <a href="/rss.xml">RSS новости</a><br />
+                    <br />
+                    • &nbsp; <a href="http://dle.reformal.ru/" target="_blank"><strong>Написать пожелание</strong></a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://dle.reformal.ru/" target="_blank"><strong>для новых версий скрипта</strong></a></td>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo02"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">ОПРОС<br />
+                    НА САЙТЕ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+                <td width="185" align="left" valign="top" class="stext" style="line-height: 18px"><script type="text/javascript">
+                    <!--
+                    function doVote( event ){
+
+
+                        var vote_check = $('#dle-vote input:radio[name=vote_check]:checked').val();
+
+                        ShowLoading('');
+
+                        $.get(dle_root + "engine/ajax/vote.php", { vote_id: "2", vote_action: event, vote_check: vote_check, vote_skin: dle_skin }, function(data){
+
+                            HideLoading('');
+
+                            $("#vote-layer").fadeOut(500, function() {
+                                $(this).html(data);
+                                $(this).fadeIn(500);
+                            });
+
+                        });
+                    }
+                    //-->
+                </script><div id='vote-layer'>
+                    <!-- Voting question start -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="left"><strong>Совершаете ли вы покупки в интернет?</strong></td>
+                        </tr>
+                    </table>
+                    <!-- Voting question end -->
+                    <br />
+                    <!-- Voting answers start -->
+                    <form method="post" name="vote" action=''><div id="dle-vote"><div class="vote"><input name="vote_check" type="radio" checked="checked" value="0" /> Да охотно, если это выгодно</div><div class="vote"><input name="vote_check" type="radio"  value="1" /> Только когда нет другого выбора</div><div class="vote"><input name="vote_check" type="radio"  value="2" /> Нет, я не доверяю интернету</div><div class="vote"><input name="vote_check" type="radio"  value="3" /> Нет, просто не понимаю как это сделать</div></div><br />
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td width="35" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="35" height="1" alt="" /></td>
+                                <td align="left"><input type="hidden" name="vote_action" value="vote" />
+                                    <input type="hidden" name="vote_id" id="vote_id" value="1" />
+                                    <input type="submit" onclick="doVote('vote'); return false;" class="bbcodes_poll" value="Голосовать" /></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <!-- Voting answers end -->
+                    <!-- Voting results start -->
+                    <form method="post" name="vote_result" action=''>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="left" width="35"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="3" alt="" /></td>
+                                <td align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="3" alt="" /></td>
+                            </tr>
+                            <tr>
+                                <td width="35" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="35" height="1" alt="" /></td>
+                                <td align="left"><input type="hidden" name="vote_action" value="results" />
+                                    <input type="hidden" name="vote_id" value="1" />
+                                    <input type="submit" onclick="doVote('results'); return false;" class="bbcodes_poll" value="Результаты" /></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <!-- Voting results end -->
+
+                </div></td>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo03"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">КАЛЕНДАРЬ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td width="169" align="center" valign="top"><div id="calendar-layer"><table id="calendar" cellpadding="3" class="calendar"><tr><th colspan="7" class="monthselect"><a class="monthlink" onclick="doCalendar('02','2014','right'); return false;" href="http://dle-news.ru/2014/02/" title="Предыдущий месяц">&laquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;Март 2014&nbsp;&nbsp;&nbsp;&nbsp;&raquo;</th></tr><tr><th class="workday">Пн</th><th class="workday">Вт</th><th class="workday">Ср</th><th class="workday">Чт</th><th class="workday">Пт</th><th class="weekday">Сб</th><th class="weekday">Вс</th></tr><tr><td colspan="5">&nbsp;</td><td  class="weekday" >1</td><td  class="weekday" >2</td></tr><tr><td  class="day" >3</td><td  class="day" >4</td><td  class="day" >5</td><td  class="day" >6</td><td  class="day" >7</td><td  class="weekday" >8</td><td  class="weekday" >9</td></tr><tr><td  class="day" >10</td><td  class="day" >11</td><td  class="day" >12</td><td  class="day" >13</td><td  class="day" >14</td><td  class="day-active" ><a class="day-active" href="http://dle-news.ru/2014/03/15/" title="Все посты за 15 марта 2014">15</a></td><td  class="weekday" >16</td></tr><tr><td  class="day" >17</td><td  class="day" >18</td><td  class="day" >19</td><td  class="day" >20</td><td  class="day" >21</td><td  class="weekday" >22</td><td  class="weekday" >23</td></tr><tr><td  class="day" >24</td><td  class="day" >25</td><td  class="day" >26</td><td  class="day day-current" >27</td><td  class="day" >28</td><td  class="weekday" >29</td><td  class="weekday" >30</td></tr><tr><td  class="day" >31</td><td colspan="6">&nbsp;</td></tr></table></div></td>
+                <td width="26"><img src="/templates/DLEoffsite/images/spacer.gif" width="26" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo04"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">ПОПУЛЯРНЫЕ<br />
+                    СТАТЬИ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+                <td width="185" align="left" valign="top" class="copy" style="line-height: 18px"><ul><li><a href="http://dle-news.ru/release/1571-datalife-engine-v100-final-release.html">DataLife Engine v.10.0 Final Release</a></li><li><a href="http://dle-news.ru/release/1590-datalife-engine-v101-final-release.html">DataLife Engine v.10.1 Final Release</a></li><li><a href="http://dle-news.ru/pressrelease/1587-datalife-engine-v101-press-release.html">DataLife Engine v.10.1 Press Release</a></li><li><a href="http://dle-news.ru/pressrelease/1568-datalife-engine-v100-press-release.html">DataLife Engine v.10.0 Press Release</a></li><li><a href="http://dle-news.ru/tips/770-pravila-rewrite-dlya-podderzhki-chpu-na-serverax.html">Правила Rewrite для поддержки ЧПУ на серверах под управлением Nginx</a></li><li><a href="http://dle-news.ru/modules/1537-cleantalk-modul-zaschity-datalife-engine-ot-spama.html">CleanTalk. Модуль защиты DataLife Engine от спама</a></li><li><a href="http://dle-news.ru/pressrelease/1594-datalife-engine-v102-press-release.html">DataLife Engine v.10.2 Press Release</a></li><li><a href="http://dle-news.ru/bags/v10/1580-potencialnaya-ugroza-v-module-minify.html">Потенциальная угроза в модуле Minify</a></li><li><a href="http://dle-news.ru/modules/1581-socialnye-kommentarii-dlya-dle.html">Социальные комментарии для DLE</a></li><li><a href="http://dle-news.ru/modules/1564-dle-shortbar-v1.html">DLE ShortBar v.1</a></li></ul></td>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo05"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">АРХИВ<br />
+                    НОВОСТЕЙ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td width="185" align="left" valign="top" class="copy" style="line-height: 18px"><a class="archives" href="http://dle-news.ru/2014/03/"><b>Март 2014 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/12/"><b>Декабрь 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/11/"><b>Ноябрь 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/10/"><b>Октябрь 2013 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/09/"><b>Сентябрь 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/08/"><b>Август 2013 (3)</b></a><br /><div id="dle_news_archive" style="display:none;"><a class="archives" href="http://dle-news.ru/2013/07/"><b>Июль 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/06/"><b>Июнь 2013 (5)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/05/"><b>Май 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/04/"><b>Апрель 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/02/"><b>Февраль 2013 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2013/01/"><b>Январь 2013 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/11/"><b>Ноябрь 2012 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/09/"><b>Сентябрь 2012 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/08/"><b>Август 2012 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/06/"><b>Июнь 2012 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/05/"><b>Май 2012 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/04/"><b>Апрель 2012 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/03/"><b>Март 2012 (7)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/02/"><b>Февраль 2012 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2012/01/"><b>Январь 2012 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/12/"><b>Декабрь 2011 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/09/"><b>Сентябрь 2011 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/08/"><b>Август 2011 (5)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/06/"><b>Июнь 2011 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/05/"><b>Май 2011 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/04/"><b>Апрель 2011 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2011/01/"><b>Январь 2011 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/12/"><b>Декабрь 2010 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/11/"><b>Ноябрь 2010 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/10/"><b>Октябрь 2010 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/09/"><b>Сентябрь 2010 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/08/"><b>Август 2010 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/06/"><b>Июнь 2010 (8)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/05/"><b>Май 2010 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/04/"><b>Апрель 2010 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/03/"><b>Март 2010 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/02/"><b>Февраль 2010 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2010/01/"><b>Январь 2010 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/12/"><b>Декабрь 2009 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/11/"><b>Ноябрь 2009 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/10/"><b>Октябрь 2009 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/08/"><b>Август 2009 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/07/"><b>Июль 2009 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/06/"><b>Июнь 2009 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/05/"><b>Май 2009 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/04/"><b>Апрель 2009 (5)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/02/"><b>Февраль 2009 (6)</b></a><br /><a class="archives" href="http://dle-news.ru/2009/01/"><b>Январь 2009 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/12/"><b>Декабрь 2008 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/11/"><b>Ноябрь 2008 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/10/"><b>Октябрь 2008 (7)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/09/"><b>Сентябрь 2008 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/08/"><b>Август 2008 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/06/"><b>Июнь 2008 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/05/"><b>Май 2008 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/04/"><b>Апрель 2008 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/03/"><b>Март 2008 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/02/"><b>Февраль 2008 (3)</b></a><br /><a class="archives" href="http://dle-news.ru/2008/01/"><b>Январь 2008 (6)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/12/"><b>Декабрь 2007 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/11/"><b>Ноябрь 2007 (5)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/10/"><b>Октябрь 2007 (6)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/09/"><b>Сентябрь 2007 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/08/"><b>Август 2007 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/07/"><b>Июль 2007 (1)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/06/"><b>Июнь 2007 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/05/"><b>Май 2007 (4)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/04/"><b>Апрель 2007 (7)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/03/"><b>Март 2007 (9)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/02/"><b>Февраль 2007 (5)</b></a><br /><a class="archives" href="http://dle-news.ru/2007/01/"><b>Январь 2007 (10)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/12/"><b>Декабрь 2006 (7)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/11/"><b>Ноябрь 2006 (10)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/10/"><b>Октябрь 2006 (12)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/09/"><b>Сентябрь 2006 (7)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/08/"><b>Август 2006 (9)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/06/"><b>Июнь 2006 (12)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/05/"><b>Май 2006 (2)</b></a><br /><a class="archives" href="http://dle-news.ru/2006/04/"><b>Апрель 2006 (2)</b></a><br /></div><div id="dle_news_archive_link" ><br /><a class="archives" onclick="$('#dle_news_archive').toggle('blind',{},700); return false;" href="#">Показать / скрыть весь архив</a></div></td>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo06"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">НАШИ<br />
+                    ПАРТНЁРЫ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+                <td width="189" align="center" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="center" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="5" alt="" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><a href="http://www.dletemplates.com/" target="_blank"><img src="/templates/DLEoffsite/images/_banner_dletemplates.gif" alt="Шаблоны для DLE" width="180" height="75" border="0" /></a></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><img src="/templates/DLEoffsite/images/_banner_shadow.gif" width="180" height="20" alt="" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><a href="http://www.ooooonline.com/" target="_blank"><img src="/templates/DLEoffsite/images/_banner_ooooonline.gif" alt="DLE-Украина" width="180" height="75" border="0" /></a></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><img src="/templates/DLEoffsite/images/_banner_shadow2.gif" width="180" height="9" alt="" /></td>
+                    </tr>
+                </table></td>
+                <td width="16"><img src="/templates/DLEoffsite/images/spacer.gif" width="16" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo07"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">МЫ<br />
+                    РАБОТАЕМ С</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+                <td width="189" align="center" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="center" valign="top"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="5" alt="" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><a href="http://passport.webmoney.ru/asp/certview.asp?wmid=937425685736" target="_blank"><img src="/templates/DLEoffsite/images/_banner_webmoney.gif" alt="Аттестованный участник Webmoney" width="180" height="75" border="0" /></a></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><img src="/templates/DLEoffsite/images/_banner_shadow.gif" width="180" height="20" alt="" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><a href="http://robokassa.ru/" target="_blank"><img src="/templates/DLEoffsite/images/robokassa.png" alt="" width="180" height="75" border="0" /></a></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><img src="/templates/DLEoffsite/images/_banner_shadow2.gif" width="180" height="9" alt="" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><a href="https://money.yandex.ru" target="_blank"><img src="https://money.yandex.ru/img/yamoney_logo120x60.gif" alt="Мы принимаем Яндекс.Деньги" title="Мы принимаем Яндекс.Деньги" border="0" width="120" height="60"/></a></td>
+                    </tr>
+                </table></td>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="right" valign="top" class="blo08"><table width="125" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="36" align="left" class="ltitle">НА ПРАВАХ<br />
+                    РЕКЛАМЫ</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo002.gif" width="215" height="27" alt="" /></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="blo003"><table width="215" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="10"><img src="/templates/DLEoffsite/images/spacer.gif" width="10" height="1" alt="" /></td>
+                <td width="185" align="left" valign="top" class="stext" style="line-height: 18px"><a href="http://3ddd-room.ru" target="_blank">Дизайн интерьера дистанционно</a><br /><!--db868--> <a href="http://www.m-energy.ru">бензогенераторы, электростанции, дизель генераторы</a><br />Сколько стоит светодиодный <a href="http://www.delight2000.com/equipment/1083/">экран</a> ?
+                </td>
+                <td width="16"><img src="/templates/DLEoffsite/images/spacer.gif" width="16" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_blo004.gif" width="215" height="38" alt="" /></td>
+    </tr>
+</table>
+
+</td>
+<td width="20" align="left" valign="top" bgcolor="#FFFFFF"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+<td align="center" valign="top" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="36" align="left" class="speedbar"><span id="dle-speedbar"><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://dle-news.ru/" itemprop="url"><span itemprop="title">Главная страница</span></a></span></span></td>
+        <td height="36" align="left" class="speedbar" width="190"><a href="http://forum.dle-news.ru/"><strong>Форум технической поддержки</strong></a></td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="10" alt="" /></td>
+    </tr>
+    <tr>
+        <td bgcolor="#E4DAC1" colspan="2"><img src="/templates/DLEoffsite/images/spacer.gif" width="1" height="1" alt="" /></td>
+    </tr>
+</table>
+<br />
+<br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="5" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_new_release_01.gif" width="5" height="257" alt="" /></td>
+        <td width="135" align="center" valign="top" class="new_release_02"><img src="/templates/DLEoffsite/images/dlet_smallbox.gif" width="135" height="214" alt="" /></td>
+        <td width="28" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_new_release_03.gif" width="28" height="257" alt="" /></td>
+        <td align="left" valign="top" class="new_release_04"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="new_release_06">
+            <tr>
+                <td height="50" align="left" class="new_release_title">Движок для сайта <font color="#ffe7b1">DataLife Engine</font> - актуальная версия <font color="#ffe7b1">10.1</font></td>
+            </tr>
+            <tr>
+                <td height="115" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="34" align="left" class="nvgtxt"><strong>Новые возможности системы:</strong></td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="21" align="left"><img src="/templates/DLEoffsite/images/dlet_new_release_gp.gif" width="21" height="20" alt="" /></td>
+                                <td width="15" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="15" height="1" alt="" /></td>
+                                <td align="left" class="nvgtxt">Новый модуль "Перекрестные ссылки" в админпанели.</td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="21" align="left"><img src="/templates/DLEoffsite/images/dlet_new_release_gp.gif" width="21" height="20" alt="" /></td>
+                                <td width="15" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="15" height="1" alt="" /></td>
+                                <td align="left" class="nvgtxt">Новые возможности воспроизведения видео с использованием HTML5 плеера.</td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="21" align="left"><img src="/templates/DLEoffsite/images/dlet_new_release_gp.gif" width="21" height="20" alt="" /></td>
+                                <td width="15" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="15" height="1" alt="" /></td>
+                                <td align="left" class="nvgtxt">Новые возможности для оформления шаблонов.</td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="21" align="left"><img src="/templates/DLEoffsite/images/dlet_new_release_gp.gif" width="21" height="20" alt="" /></td>
+                                <td width="15" align="left"><img src="/templates/DLEoffsite/images/spacer.gif" width="15" height="1" alt="" /></td>
+                                <td align="left" class="nvgtxt">Новые возможности для системы автоматической фильтрации спамеров.</td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                </table></td>
+            </tr>
+            <tr>
+                <td height="50" align="left" class="nvgtxt">• <a href="/about.html">Возможности скрипта</a> &nbsp;• <a href="/release/1590-datalife-engine-v101-final-release.html#download">Скачать дистрибутив</a> &nbsp;• <a href="/price.html">Купить</a> &nbsp;• <a href="/demo.html">Демо-Версия</a> &nbsp;• <a href="/2006/08/28/skrinshoty_datalife_engine.html">Скриншоты</a></td>
+            </tr>
+        </table></td>
+        <td width="11" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_new_release_05.gif" width="11" height="257" alt="" /></td>
+    </tr>
+</table>
+
+<div id='dle-content'>                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" align="left" valign="top" bgcolor="#E79B4C" class="ablo01"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo02.gif" width="20" height="50" alt="" /></td>
+                <td align="left" style="line-height: 20px"><span class="ntitle">DataLife Engine v.10.2 Press Release</span><br />
+                    <span class="category">Раздел: <a href="http://dle-news.ru/pressrelease/">Пресс релизы</a></span></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo03"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo031.gif" width="20" height="18" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo033.gif" width="20" height="18" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><table width="100%" style="table-layout:fixed;" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" class="ablo041"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td align="left" valign="top" class="news"><!--dle_image_begin:http://dle-news.ru/templates/DLEoffsite/images/boxsmall.jpg|left--><img src="/templates/DLEoffsite/images/boxsmall.jpg" style="float:left;" alt="DataLife Engine v.10.2 Press Release" title="DataLife Engine v.10.2 Press Release"  /><!--dle_image_end--><br /><b>Дорогие друзья,</b><br /><br />Завершен основной этап разработки версии <b>10.2</b>, релиз находится на тестировании и предрелизной подготовке, ну а пока мы предлагаем вам ознакомиться с информацией о том что ждет вас с выходом новой версии. В данном релизе вас ожидает принципиально новая панель управления DataLife Engine, новые возможности для пользовательского вывода новостей для тега custom, включая навигацию по страницам для данного тега, новые возможности для модуля перекстестных ссылок, и многое другое, но обо всем подробнее ...<br /><br /></td>
+                <td width="20" class="ablo043"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td height="35" align="left" valign="top" bgcolor="#F1EAD7"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo051.gif" width="20" height="35" alt="" /></td>
+                <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="85" align="left"><div class="rating">
+                            <ul class="unit-rating">
+                                <li class="current-rating" style="width:100%;">100</li>
+                            </ul>
+                        </div></td>
+                        <td align="right" class="slink">  Просмотров: 11562 &nbsp; &nbsp; автор: <strong><a onclick="ShowProfile('celsoft', 'http://dle-news.ru/user/celsoft/', '0'); return false;" href="http://dle-news.ru/user/celsoft/">celsoft</a></strong> &nbsp; &nbsp; 15 марта 2014 &nbsp; &nbsp; <a href="http://dle-news.ru/pressrelease/1594-datalife-engine-v102-press-release.html#comment">Комментарии (60)</a> &nbsp; &nbsp; <a href="http://dle-news.ru/pressrelease/1594-datalife-engine-v102-press-release.html"><strong>Подробнее</strong></a></td>
+                    </tr>
+                </table></td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo053.gif" width="20" height="35" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo06"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo061.gif" width="20" height="31" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo063.gif" width="20" height="31" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+</table>                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" align="left" valign="top" bgcolor="#E79B4C" class="ablo01"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo02.gif" width="20" height="50" alt="" /></td>
+                <td align="left" style="line-height: 20px"><span class="ntitle">DataLife Engine v.10.1 Final Release</span><br />
+                    <span class="category">Раздел: <a href="http://dle-news.ru/release/">Релизы</a></span></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo03"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo031.gif" width="20" height="18" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo033.gif" width="20" height="18" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><table width="100%" style="table-layout:fixed;" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" class="ablo041"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td align="left" valign="top" class="news"><div style="text-align:center;"><!--dle_image_begin:http://dle-news.ru/templates/DLEoffsite/images/box.jpg|--><img src="/templates/DLEoffsite/images/box.jpg" alt="DataLife Engine v.10.1 Final Release" title="DataLife Engine v.10.1 Final Release"  /><!--dle_image_end--></div><br /><b>Дорогие друзья</b>,<br /><br /><b>Представляем вам новую версию нашего скрипта DataLife Engine v.10.1.</b> В данном релизе вас ожидает новый модуль в админпанели скрипта, новые возможности для воспроизведения видео на сайте с использованием HTML5 плеера, новые возможности в работе антивируса, новые возможности для оформления шаблонов и многое другое, но обо всем подробнее ...<br /><br /></td>
+                <td width="20" class="ablo043"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td height="35" align="left" valign="top" bgcolor="#F1EAD7"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo051.gif" width="20" height="35" alt="" /></td>
+                <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="85" align="left"><div class="rating">
+                            <ul class="unit-rating">
+                                <li class="current-rating" style="width:100%;">100</li>
+                            </ul>
+                        </div></td>
+                        <td align="right" class="slink">  Просмотров: 178701 &nbsp; &nbsp; автор: <strong><a onclick="ShowProfile('celsoft', 'http://dle-news.ru/user/celsoft/', '0'); return false;" href="http://dle-news.ru/user/celsoft/">celsoft</a></strong> &nbsp; &nbsp; 01 ноября 2013 &nbsp; &nbsp; <a href="http://dle-news.ru/release/1590-datalife-engine-v101-final-release.html#comment">Комментарии (291)</a> &nbsp; &nbsp; <a href="http://dle-news.ru/release/1590-datalife-engine-v101-final-release.html"><strong>Подробнее</strong></a></td>
+                    </tr>
+                </table></td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo053.gif" width="20" height="35" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo06"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo061.gif" width="20" height="31" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo063.gif" width="20" height="31" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+</table>                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" align="left" valign="top" bgcolor="#E79B4C" class="ablo01"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo02.gif" width="20" height="50" alt="" /></td>
+                <td align="left" style="line-height: 20px"><span class="ntitle">DataLife Engine v.10.0 (демоверсия)</span><br />
+                    <span class="category">Раздел: <a href="http://dle-news.ru/release/">Релизы</a></span></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo03"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo031.gif" width="20" height="18" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo033.gif" width="20" height="18" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><table width="100%" style="table-layout:fixed;" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" class="ablo041"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td align="left" valign="top" class="news"><b>Уважаемые посетители,</b><br /><br />Сегодня состоялся выход бесплатной демонстрационной версии <b>DataLife Engine v.10.0</b>. Вы можете бесплатно скачать новую версию по адресу <a href="http://dle-news.ru/demo.html" >http://dle-news.ru/demo.html</a>. Напоминаем вам что данный релиз не имеет функциональных ограничений, но содержит следующие ограничения:<br /><br /><b>1.</b> Закрытый исходный код<br /><b>2.</b> Максимальное количество новостей - 100<br /><b>3.</b> Максимальное количество комментариев - 200<br /><b>4.</b> Отсутствие возможности обновления с предыдущих версий.<br /><br />Платную версию скрипта, в которой отсутствуют указанные выше ограничения, вы можете скачать по адресу: <a href="http://dle-news.ru/release/1571-datalife-engine-v100-final-release.html#download" >http://dle-news.ru/release/1571-datalife-engine-v100-final-release.html#download</a>. Приобрести лицензию на скрипт вы можете на <a href="http://dle-news.ru/price.html" >нашем сайте</a>. Переход с бесплатной версии на платную без потери данных также возможен без каких-либо проблем.<br /><br /></td>
+                <td width="20" class="ablo043"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td height="35" align="left" valign="top" bgcolor="#F1EAD7"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo051.gif" width="20" height="35" alt="" /></td>
+                <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="85" align="left"><div class="rating">
+                            <ul class="unit-rating">
+                                <li class="current-rating" style="width:100%;">100</li>
+                            </ul>
+                        </div></td>
+                        <td align="right" class="slink">  Просмотров: 18672 &nbsp; &nbsp; автор: <strong><a onclick="ShowProfile('celsoft', 'http://dle-news.ru/user/celsoft/', '0'); return false;" href="http://dle-news.ru/user/celsoft/">celsoft</a></strong> &nbsp; &nbsp; 29 октября 2013 &nbsp; &nbsp; <a href="http://dle-news.ru/release/1589-datalife-engine-v100-demoversiya.html#comment">Комментарии (4)</a> &nbsp; &nbsp; <a href="http://dle-news.ru/release/1589-datalife-engine-v100-demoversiya.html"><strong>Подробнее</strong></a></td>
+                    </tr>
+                </table></td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo053.gif" width="20" height="35" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo06"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo061.gif" width="20" height="31" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo063.gif" width="20" height="31" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+</table>                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" align="left" valign="top" bgcolor="#E79B4C" class="ablo01"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo02.gif" width="20" height="50" alt="" /></td>
+                <td align="left" style="line-height: 20px"><span class="ntitle">DataLife Engine v.10.1 Press Release</span><br />
+                    <span class="category">Раздел: <a href="http://dle-news.ru/pressrelease/">Пресс релизы</a></span></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo03"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo031.gif" width="20" height="18" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo033.gif" width="20" height="18" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><table width="100%" style="table-layout:fixed;" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" class="ablo041"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td align="left" valign="top" class="news"><!--dle_image_begin:http://dle-news.ru/templates/DLEoffsite/images/boxsmall.jpg|left--><img src="/templates/DLEoffsite/images/boxsmall.jpg" style="float:left;" alt="DataLife Engine v.10.1 Press Release" title="DataLife Engine v.10.1 Press Release"  /><!--dle_image_end--><br /><b>Дорогие друзья,</b><br /><br />Завершен основной этап разработки версии <b>10.1</b>, релиз находится на тестировании и предрелизной подготовке, ну а пока мы предлагаем вам ознакомится с информацией о том что ждет вас с выходом новой версии. В данном релизе вас ожидает новый модуль в админпанели скрипта, новые возможности для воспроизведения видео на сайте с использованием HTML5 плеера, новые возможности в работе антивируса, новые возможности для оформления шаблонов и многое другое, но обо всем подробнее ...<br /><br /></td>
+                <td width="20" class="ablo043"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td height="35" align="left" valign="top" bgcolor="#F1EAD7"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo051.gif" width="20" height="35" alt="" /></td>
+                <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="85" align="left"><div class="rating">
+                            <ul class="unit-rating">
+                                <li class="current-rating" style="width:100%;">100</li>
+                            </ul>
+                        </div></td>
+                        <td align="right" class="slink">  Просмотров: 28491 &nbsp; &nbsp; автор: <strong><a onclick="ShowProfile('celsoft', 'http://dle-news.ru/user/celsoft/', '0'); return false;" href="http://dle-news.ru/user/celsoft/">celsoft</a></strong> &nbsp; &nbsp; 14 октября 2013 &nbsp; &nbsp; <a href="http://dle-news.ru/pressrelease/1587-datalife-engine-v101-press-release.html#comment">Комментарии (134)</a> &nbsp; &nbsp; <a href="http://dle-news.ru/pressrelease/1587-datalife-engine-v101-press-release.html"><strong>Подробнее</strong></a></td>
+                    </tr>
+                </table></td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo053.gif" width="20" height="35" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo06"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo061.gif" width="20" height="31" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo063.gif" width="20" height="31" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+</table>                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="50" align="left" valign="top" bgcolor="#E79B4C" class="ablo01"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo02.gif" width="20" height="50" alt="" /></td>
+                <td align="left" style="line-height: 20px"><span class="ntitle">Правила Rewrite для поддержки ЧПУ на серверах под управлением Nginx</span><br />
+                    <span class="category">Раздел: <a href="http://dle-news.ru/tips/">Советы</a></span></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo03"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo031.gif" width="20" height="18" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo033.gif" width="20" height="18" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top"><table width="100%" style="table-layout:fixed;" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" class="ablo041"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+                <td align="left" valign="top" class="news"><b>Дорогие друзья,</b><br /><br />Как известно сервер под управлением Apache не является оптимальным решением для создания высокопосещаемых проектов, и по мере роста посетителей сайта, потребление памяти сервером также растет в геометрической прогрессии. Поэтому при оптимизации серверного ПО очень часто прибегают к установке связки из легкого кеширующего сервера Nginx как фронтсервера и Apache как бэксервера. Данная связка позволяет существенно сократить расход памяти и увеличить быстродействие работы сервера. Однако существует еще более производительное решение, и это установка сервера Nginx как единственного standalone сервера, при этом Apache полностью убирается из системы, что позволяет добиться еще большей производительности. Единственной проблемой при работе с DLE такой системы, это несовместимость стандартных правил ЧПУ в файле .htaccess, которые прописаны для Apache. Поэтому если вы решите ставить Nginx как отдельный единственный сервер, мы предлагаем вам скачать правила написанные для Nginx ....<br /><br /></td>
+                <td width="20" class="ablo043"><img src="/templates/DLEoffsite/images/spacer.gif" width="20" height="1" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td height="35" align="left" valign="top" bgcolor="#F1EAD7"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo051.gif" width="20" height="35" alt="" /></td>
+                <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="85" align="left"><div class="rating">
+                            <ul class="unit-rating">
+                                <li class="current-rating" style="width:100%;">100</li>
+                            </ul>
+                        </div></td>
+                        <td align="right" class="slink">  Просмотров: 89532 &nbsp; &nbsp; автор: <strong><a onclick="ShowProfile('celsoft', 'http://dle-news.ru/user/celsoft/', '0'); return false;" href="http://dle-news.ru/user/celsoft/">celsoft</a></strong> &nbsp; &nbsp; 25 августа 2013 &nbsp; &nbsp; <a href="http://dle-news.ru/tips/770-pravila-rewrite-dlya-podderzhki-chpu-na-serverax.html#comment">Комментарии (47)</a> &nbsp; &nbsp; <a href="http://dle-news.ru/tips/770-pravila-rewrite-dlya-podderzhki-chpu-na-serverax.html"><strong>Подробнее</strong></a></td>
+                    </tr>
+                </table></td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo053.gif" width="20" height="35" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" class="ablo06"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo061.gif" width="20" height="31" alt="" /></td>
+                <td>&nbsp;</td>
+                <td width="20" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_ablo063.gif" width="20" height="31" alt="" /></td>
+            </tr>
+        </table></td>
+    </tr>
+</table><div class="navigation ignore-select" align="center" style="margin-bottom:10px; margin-top:10px;"><span>Назад</span> <span>1</span> <a href="http://dle-news.ru/page/2/">2</a> <a href="http://dle-news.ru/page/3/">3</a> <a href="http://dle-news.ru/page/4/">4</a> <a href="http://dle-news.ru/page/5/">5</a> <a href="http://dle-news.ru/page/6/">6</a> <a href="http://dle-news.ru/page/7/">7</a> <a href="http://dle-news.ru/page/8/">8</a> <a href="http://dle-news.ru/page/9/">9</a> <a href="http://dle-news.ru/page/10/">10</a> <span class="nav_ext">...</span> <a href="http://dle-news.ru/page/47/">47</a> <a href="http://dle-news.ru/page/2/">Далее</a></div></div>
+</td>
+<td width="20" align="right" valign="bottom" class="col5"><img src="/templates/DLEoffsite/images/dlet_col5bott.gif" width="20" height="110" alt="" /></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+    <td align="left" valign="top" class="footr001"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="295" align="left" valign="top"><img src="/templates/DLEoffsite/images/dlet_footr002.gif" width="295" height="160" alt="" /></td>
+            <td align="left" valign="top" class="footr004"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td height="66" colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" class="copyr" style="line-height: 20px"><a href="/"><strong>Главная страница</strong></a> &nbsp; • &nbsp; <a href="/release/"><strong>Релизы</strong></a> &nbsp; • &nbsp; <a href="/modules/"><strong>Модули</strong></a> &nbsp; • &nbsp; <a href="http://forum.dle-news.ru/"><strong>Форум поддержки</strong></a> &nbsp; • &nbsp; <a href="/price.html"><strong>Покупка</strong></a> &nbsp; • &nbsp; <a href="/index.php?do=feedback"><strong>Обратная связь</strong></a><br />
+                        <br />&copy; 2004 - 2014 SoftNews Media Group. Сайт работает под управлением DataLife Engine.<br /></td>
+                    <td width="187" align="right"><!--Openstat--><span id="openstat512748"></span><script type="text/javascript">
+                        var openstat = { counter: 512748, image: 5049, next: openstat }; (function(d, t, p) {
+                            var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+                            j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+                            var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+                        })(document, "script", document.location.protocol);
+                    </script><!--/Openstat--></td>
+                </tr>
+            </table></td>
+            <td width="45" align="right" valign="top"><img src="/templates/DLEoffsite/images/dlet_footr003.gif" width="45" height="160" alt="" /></td>
+        </tr>
+    </table></td>
+</tr>
+</table></td>
+<td width="25"><img src="/templates/DLEoffsite/images/spacer.gif" width="25" height="1" alt="" /></td>
+</tr>
+</table></td>
+<td>&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</body>
+</html>
+<!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru) -->
