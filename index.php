@@ -3,6 +3,7 @@
 define('APP_DIR', __DIR__ . '/app');
 
 require_once APP_DIR . '/Scanner.php';
+require_once APP_DIR . '/Category.php';
 
 
 $urls = [
@@ -54,7 +55,7 @@ $urls = [
 //];
 
 
-//
+// FIXME: try to use workers. With one of MQ in future
 //
 //$ch = curl_init();
 //curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 1);
@@ -82,9 +83,9 @@ $urls = [
 //exit;
 
 
-// получаем данные по URL и проверяем сканерами на предмет соответствия какому-либо
-// сканеру
+// DETECT CYCLE!
 $scanner = new Scanner(__DIR__ . '/apps.json');
+$category = new Category(__DIR__ . '/apps.json');
 
 
 ?>
@@ -130,8 +131,8 @@ foreach ($urls as $url) {
     <?php
     foreach ($apps as $app) {
         $categories = $app['categories'];
-        array_walk($categories, function(&$item) use($scanner) {
-                $item = $scanner->getCategoryNameById($item);
+        array_walk($categories, function(&$item) use($category) {
+                $item = $category->getCategoryById($item);
             });
         
         ?>

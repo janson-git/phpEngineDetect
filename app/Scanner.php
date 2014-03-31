@@ -9,7 +9,6 @@ class Scanner
     const UNKNOWN = 'unknown';
 
     protected $apps;
-    protected $categories;
 
     public
         $debug = false,
@@ -23,14 +22,8 @@ class Scanner
     {
         $json = json_decode(file_get_contents($fullJsonPath), true);
         $this->apps = $json['apps'];
-        $this->categories = $json['categories'];
     }
 
-    
-    public function getCategoryNameById($id)
-    {
-        return array_key_exists($id, $this->categories) ? $this->categories[$id] : '';
-    }
     
     
     /**
@@ -117,7 +110,7 @@ class Scanner
         $headers = $result->headers;
 
 
-        // а теперь - определяем engine 
+        
         /**
          * $appsStack = [
          *      [
