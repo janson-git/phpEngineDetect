@@ -1,6 +1,7 @@
 <?php
 
 define('APP_DIR', __DIR__ . '/app');
+define('SAVE_PARSED_TO_DB', false);
 
 require_once APP_DIR . '/Scanner.php';
 require_once APP_DIR . '/Category.php';
@@ -15,14 +16,16 @@ require_once APP_DIR . '/Category.php';
 
 // а это - локально сохранённые тестовые страницы. Для более быстрой отладки
 $urls = [
-    'http://scanner.loc/testwppage.html?bigWAdminID=',
-    'http://scanner.loc/dlepage.html',
-    'http://scanner.loc/bitrixpage.html',
-    'http://google.com',
-    'http://yandex.ru',
-
+//    'http://scanner.loc/testwppage.html?bigWAdminID=',
+//    'http://scanner.loc/dlepage.html',
+//    'http://scanner.loc/bitrixpage.html',
+// TODO: check, why not find SPDY on google
+//    'http://google.com',
+//    'http://yandex.ru',
+//
     'http://joomla.org',
-    'http://wordpress.org'
+    'http://wordpress.org',
+    'https://github.com',
 ];
 
 // немного URL с сайта alexa.com из категории Business/HR
@@ -60,7 +63,9 @@ $urls = [
 $scanner = new Scanner(__DIR__ . '/apps.json');
 $category = new Category(__DIR__ . '/apps.json');
 
-$db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
+if (SAVE_PARSED_TO_DB) {
+    $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
+}
 
 ?>
 <html>
@@ -99,32 +104,36 @@ $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
 <?php
 foreach ($urls as $url) {
     // проверим - есть ли у нас уже запись по этому сайту. Если есть - не нужно добавлять.
-    $isset = $db->query("SELECT * FROM site WHERE url = '{$url}'")->fetch(PDO::FETCH_ASSOC);
-    
-    if (empty($isset)) {
-        // если нет - распознаём и сохраняем данные
-        $apps = $scanner->detect($url);
+    if (SAVE_PARSED_TO_DB) {
+        $isset = $db->query("SELECT * FROM site WHERE url = '{$url}'")->fetch(PDO::FETCH_ASSOC);
 
-        $data = json_encode($apps, JSON_UNESCAPED_UNICODE);
-        $data = pg_escape_string($data);
-        $url = pg_escape_string($url);
+        if (empty($isset)) {
+            // если нет - распознаём и сохраняем данные
+            $apps = $scanner->detect($url);
 
-        // TODO: save site data to separate table with many-to-many links site<->apps
-        
-        // SAVE TO DB
-        $db->beginTransaction();
-        try {
-            $sql = "INSERT INTO site (url, site_data) VALUES ('{$url}', '{$data}')";
-            $db->query($sql);
-        } catch (Exception $e) {
-            $db->rollBack();
-            throw $e;
+            $data = json_encode($apps, JSON_UNESCAPED_UNICODE);
+            $data = pg_escape_string($data);
+            $url = pg_escape_string($url);
+
+            // TODO: save site data to separate table with many-to-many links site<->apps
+            // SAVE TO DB
+            $db->beginTransaction();
+            try {
+                $sql = "INSERT INTO site (url, site_data) VALUES ('{$url}', '{$data}')";
+                $db->query($sql);
+            } catch (Exception $e) {
+                $db->rollBack();
+                throw $e;
+            }
+            $db->commit();
+
+        } else {
+            // если есть - берём данные из БД
+            $apps = json_decode($isset['site_data'], true);
         }
-        $db->commit();
 
     } else {
-        // если есть - берём данные из БД
-        $apps = json_decode($isset['site_data'], true);
+        $apps = $scanner->detect($url);
     }
     
 

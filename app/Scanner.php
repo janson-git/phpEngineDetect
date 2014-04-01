@@ -114,9 +114,7 @@ class Scanner
 
     public function detect($url)
     {
-        // избавляемся от якорей в URL
         list($url) = explode('#', $url, 1);
-
 
         try {
             $result = $this->curl($url);
@@ -126,7 +124,6 @@ class Scanner
 
         $pageContent = $result->html;
         $headers = $result->headers;
-
 
         
         /**
@@ -146,14 +143,14 @@ class Scanner
             $categories = $app['cats'];
             
             foreach ($app as $type => $sample) {
+
                 switch ($type) {
                     case 'url':
-                        if (!is_array($sample)) {
-                            $sample = [$sample];
-                        }
-                        foreach ($sample as $pattern) {
+                        $sample = $this->parse($sample);
+                        foreach ($sample as $item) {
+                            $pattern = $item['regex'];
                             if (preg_match("#{$pattern}#", $url)) {
-                                $appsStack[$appName] = ['name' => $appName, 'categories' => $categories];
+                                $appsStack[$appName] = $this->setDetected($sample, $type, $url);
                                 break;
                             }
                         }
@@ -161,7 +158,7 @@ class Scanner
 
                     case 'html':
                         if ($this->isHtmlMatch($sample, $pageContent)) {
-                            $appsStack[$appName] = ['name' => $appName, 'categories' => $categories];
+                            $appsStack[$appName] = $this->setDetected($sample, $type, $pageContent);
                         }
                         break;
 
@@ -170,7 +167,7 @@ class Scanner
                         if (!empty($matches)) {
                             foreach ($matches[2] as $uri) {
                                 if ($this->isScriptMatch($sample, $uri)) {
-                                    $appsStack[$appName] = ['name' => $appName, 'categories' => $categories];
+                                    $appsStack[$appName] = $this->setDetected($sample, $type, $uri);
                                     break;
                                 }
                             }
@@ -181,8 +178,8 @@ class Scanner
                         preg_match_all("/<meta[^>]+>/i", $pageContent, $matches);
                         if (!empty($matches)) {
                             foreach ($matches[0] as $metaTag) {
-                                if ($this->isMetaMatch($sample, $metaTag)) {
-                                    $appsStack[$appName] = ['name' => $appName, 'categories' => $categories];
+                                if ($this->isMetaMatch($sample, $metaTag, $appName)) {
+                                    $appsStack[$appName] = $this->setDetected($sample, $type, $metaTag);
                                     break;
                                 }
                             }
@@ -191,11 +188,14 @@ class Scanner
 
                     case 'headers':
                         if ($this->isHeadersMatch($sample, $headers)) {
-                            $appsStack[$appName] = ['name' => $appName, 'categories' => $categories];
+                            $appsStack[$appName] = $this->setDetected($sample, $type, $headers);
                         }
                         break;
-                    
-                    
+                }
+                
+                if (isset($appsStack[$appName])) {
+                    $appsStack[$appName]['name'] = $appName;
+                    $appsStack[$appName]['categories'] = $categories;
                 }
             }
         }
@@ -206,14 +206,10 @@ class Scanner
 
     private function isHtmlMatch($pattern, $content)
     {
-        if (empty($pattern)) {
-            return false;
-        }
-        if (!is_array($pattern)) {
-            $pattern = [$pattern];
-        }
+        $pattern = $this->parse($pattern);
 
-        foreach ($pattern as $string) {
+        foreach ($pattern as $item) {
+            $string = $item['regex'];
             $test = "#{$string}#";
             if (preg_match($test, $content)) {
                 return true;
@@ -224,14 +220,10 @@ class Scanner
 
     private function isScriptMatch($pattern, $content)
     {
-        if (empty($pattern)) {
-            return false;
-        }
-        if (!is_array($pattern)) {
-            $pattern = [$pattern];
-        }
-        foreach ($pattern as $string) {
-            $test = "#{$string}#";
+        $patterns = $this->parse($pattern);
+        
+        foreach ($patterns as $pattern) {
+            $test = "#{$pattern['regex']}#";
             if (preg_match($test, $content)) {
                 return true;
             }
@@ -246,24 +238,26 @@ class Scanner
 
         if (preg_match('#name=["\']' . $metaName . '["\']#i', $content)) {
             if (preg_match('/content=("|\')([^"\']+)("|\')/i', $content, $matches)) {
-                if (count($matches) == 4 && preg_match('#' . $metaContent . '#', $matches[2], $metaMatches)) {
-                    return true;
+                $metaContent = $this->parse($metaContent);
+                foreach ($metaContent as $item) {
+                    $pattern = $item['regex'];
+                    if (count($matches) == 4 && preg_match("#{$pattern}#", $matches[2])) {
+                        return true;
+                    }
                 }
             }
         }
-
         return false;
     }
 
     private function isHeadersMatch($sample, $headers)
     {
         foreach ($sample as $headerName => $headerContent) {
-            if (!is_array($headerContent)) {
-                $headerContent = [$headerContent];
-            }
+            $headerContent = $this->parse($headerContent);
             if (isset($headers[strtolower($headerName)])) {
                 foreach ($headerContent as $headerData) {
-                    @$matched = preg_match("#{$headerData}#", $headers[strtolower($headerName)]);
+                    $pattern = $headerData['regex'];
+                    @$matched = preg_match("#{$pattern}#", $headers[strtolower($headerName)]);
                     if ($matched) {
                         return true;
                     }
@@ -272,4 +266,113 @@ class Scanner
         }
         return false;
     }
+
+
+    /**
+     * Parse apps.json patterns
+     */
+    protected function parse($patterns) {
+        $attrs = null;
+        $parsed = [];
+
+		// Convert single patterns to an array
+		if ( is_string($patterns) ) {
+            $patterns = [ $patterns ];
+        }
+
+        foreach ($patterns as $pattern) {
+            $attrs = [];
+
+            $parts = explode('\\;', $pattern);
+            // get rules from JSON
+            foreach ($parts as $i => $attr) {
+                if ( $i ) {
+                    // Key value pairs
+                    $attr = explode(':', $attr);
+                    if ( count($attr) > 1 ) {
+                        $attrs[array_shift($attr)] = implode(':', $attr);
+                    }
+                } else {
+                    $attrs['string'] = $attr;
+                    try {
+                        $attrs['regex'] = str_replace('/', '\/', $attr); // Escape slashes in regular expression
+                    } catch (Exception $e) {
+                        $attrs['regex'] = null;
+                    }
+                }
+            }
+
+            array_push($parsed, $attrs);
+        }
+        
+        return $parsed;
+    }
+    
+    protected function setDetected($pattern, $type, $value, $key = null)
+    {
+        $app = [
+            'detected' => true,
+            'type' => $type,
+            'confidence' => [],
+            'versions' => [],
+        ];
+
+        // Set confidence level
+        array_push($app['confidence'], isset($pattern['confidence']) ? $pattern['confidence'] : 100);
+
+        // Detect version number
+        if ( isset($pattern['version']) ) {
+            $version = $pattern['version'];
+            preg_match_all($pattern['regex'], $value, $matches);
+
+            if ( !empty($matches) ) {
+                foreach ($matches as $i => $match) {
+                    // Parse ternary operator
+                    preg_match('\\\\' . $i . '\\?([^:]+):(.+)$', $version, $ternary);
+
+                    if ( $ternary && count($ternary) === 3 ) {
+                        $version = str_replace($ternary[0], $match ? $ternary[1] : $ternary[2], $version);
+                    }
+
+                    // Replace back references
+                    $version = str_replace('\\' . $i, $match ? $match : '', $version);
+                }
+
+                if ( $version && in_array($version, $app['versions'])) {
+                    array_push($app['versions'], $version);
+                }
+
+                $app['version'] = $this->getVersion($app['versions']);
+            }
+        }
+        
+        return $app;
+    }
+    
+
+    protected function getVersion($versions) {
+        $i = null;
+        $resolved = null;
+
+        if ( empty($versions) ) {
+            return null;
+        }
+
+        usort($versions, function($a, $b) {
+                return $a - $b;
+            });
+
+        $resolved = $versions[0];
+
+        for ( $i = 1; $i < count($versions); $i++ ) {
+            if ( array_key_exists($resolved, $versions[$i]) ) {
+                $resolved = $versions[$i];
+            } else {
+                break;
+            }
+        }
+
+        return $resolved;
+    }
+
 }
