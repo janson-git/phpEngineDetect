@@ -15,13 +15,14 @@ require_once APP_DIR . '/Category.php';
 
 // а это - локально сохранённые тестовые страницы. Для более быстрой отладки
 $urls = [
-//    __DIR__ . '/testwppage.html',
-//    __DIR__ . '/dlepage.html',
-//    __DIR__ . '/bitrixpage.html',
-
     'http://scanner.loc/testwppage.html?bigWAdminID=',
     'http://scanner.loc/dlepage.html',
     'http://scanner.loc/bitrixpage.html',
+    'http://google.com',
+    'http://yandex.ru',
+
+    'http://joomla.org',
+    'http://wordpress.org'
 ];
 
 // немного URL с сайта alexa.com из категории Business/HR
@@ -108,6 +109,8 @@ foreach ($urls as $url) {
         $data = pg_escape_string($data);
         $url = pg_escape_string($url);
 
+        // TODO: save site data to separate table with many-to-many links site<->apps
+        
         // SAVE TO DB
         $db->beginTransaction();
         try {
@@ -135,7 +138,6 @@ foreach ($urls as $url) {
         array_walk($categories, function(&$item) use($category) {
                 $item = $category->getCategoryById($item);
             });
-        
         ?>
         <div class="icon">
             <img src="http://scanner.loc/images/icons/<?= $app['name'] ?>.png" title="<?= $app['name'] ?>"><?= $app['name'] ?>

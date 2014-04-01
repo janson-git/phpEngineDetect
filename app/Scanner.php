@@ -18,12 +18,33 @@ class Scanner
         $curlMaxRedirects = 3
     ;
 
-    public function __construct($fullJsonPath)
+    /**
+     * @param string|null $fullJsonPath
+     */
+    public function __construct($fullJsonPath = null)
     {
-        $json = json_decode(file_get_contents($fullJsonPath), true);
-        $this->apps = $json['apps'];
+        if (!is_null($fullJsonPath)) {
+            $this->loadAppsRules($fullJsonPath);
+        }
     }
 
+    /**
+     * @param string $fullJsonPath
+     * @param bool $appendToExists
+     * @throws Exception
+     */
+    public function loadAppsRules($fullJsonPath, $appendToExists = false)
+    {
+        if (!file_exists($fullJsonPath)) {
+            throw new Exception("File {$fullJsonPath} not found");
+        }
+        
+        $json = json_decode(file_get_contents($fullJsonPath), true);
+        if ($appendToExists) {
+            $json['apps'] = array_merge($this->apps, $json['apps']);
+        }
+        $this->apps = $json['apps'];
+    }
     
     
     /**
@@ -48,14 +69,8 @@ class Scanner
                 CURLOPT_TIMEOUT => $this->curlTimeout,
                 CURLOPT_USERAGENT => $this->curlUserAgent,
 
-                CURLOPT_ENCODING => '', // just set to empty encoding to get properly headers,
-                CURLOPT_NOBODY => true
+                CURLOPT_ENCODING => '', // just set to empty encoding to get all encodings of content,
             ));
-        $headers = curl_exec($ch);
-
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_NOBODY, false);
-        curl_setopt($ch, CURLOPT_ENCODING, 'deflate');
         $response = curl_exec($ch);
 
 
@@ -64,10 +79,13 @@ class Scanner
         }
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
         if ( $httpCode != 200 ) {
             throw new \Exception('cURL request returned HTTP code ' . $httpCode);
         }
+
+        $headersLength = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $headers = substr($response, 0, $headersLength);
+        $response = substr($response, $headersLength);
 
         $result = new stdClass();
 
