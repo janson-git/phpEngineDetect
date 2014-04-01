@@ -16,16 +16,15 @@ require_once APP_DIR . '/Category.php';
 
 // а это - локально сохранённые тестовые страницы. Для более быстрой отладки
 $urls = [
-//    'http://scanner.loc/testwppage.html?bigWAdminID=',
-//    'http://scanner.loc/dlepage.html',
-//    'http://scanner.loc/bitrixpage.html',
-// TODO: check, why not find SPDY on google
+    'http://scanner.loc/local_pages/testwppage.html?bigWAdminID=',
+    'http://scanner.loc/local_pages/dlepage.html',
+    'http://scanner.loc/local_pages/bitrixpage.html',
 //    'http://google.com',
 //    'http://yandex.ru',
 //
-    'http://joomla.org',
-    'http://wordpress.org',
-    'https://github.com',
+//    'http://joomla.org',
+//    'http://wordpress.org',
+//    'https://github.com',
 ];
 
 // немного URL с сайта alexa.com из категории Business/HR
