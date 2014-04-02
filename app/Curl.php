@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Ivan Lisitskiy ivan.li@livetex.ru
+ * @author Ivan Janson ivan.janson@gmail.com
  * 4/2/14 11:28 AM
  */
 
