@@ -7,7 +7,8 @@
 class Scanner
 {
     const UNKNOWN = 'unknown';
-
+    /** @var  JsonLoader */
+    protected $jsonLoader;
     protected $apps;
 
     public
@@ -19,10 +20,13 @@ class Scanner
     ;
 
     /**
+     * @param JsonLoader $loader
      * @param string|null $fullJsonPath
      */
-    public function __construct($fullJsonPath = null)
+    public function __construct(JsonLoader $loader, $fullJsonPath = null)
     {
+        $this->jsonLoader = $loader;
+        
         if (!is_null($fullJsonPath)) {
             $this->loadAppsRules($fullJsonPath);
         }
@@ -33,17 +37,15 @@ class Scanner
      * @param bool $appendToExists
      * @throws Exception
      */
-    public function loadAppsRules($fullJsonPath, $appendToExists = false)
+    protected function loadAppsRules($fullJsonPath, $appendToExists = false)
     {
-        if (!file_exists($fullJsonPath)) {
-            throw new Exception("File {$fullJsonPath} not found");
-        }
+        $jsonData = $this->jsonLoader->load($fullJsonPath);
         
-        $json = json_decode(file_get_contents($fullJsonPath), true);
+        $decoded = json_decode($jsonData, true);
         if ($appendToExists) {
-            $json['apps'] = array_merge($this->apps, $json['apps']);
+            $decoded['apps'] = array_merge($this->apps, $decoded['apps']);
         }
-        $this->apps = $json['apps'];
+        $this->apps = $decoded['apps'];
     }
     
     

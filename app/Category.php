@@ -8,9 +8,9 @@
  {
      protected $categories = [];
      
-     public function __construct($jsonFilePath)
+     public function __construct(JsonLoader $loader, $jsonFilePath)
      {
-         $json = json_decode(file_get_contents($jsonFilePath), true);
+         $json = json_decode($loader->load($jsonFilePath), true);
          $this->categories = $json['categories'];
      }
 

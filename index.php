@@ -3,6 +3,7 @@
 define('APP_DIR', __DIR__ . '/app');
 define('SAVE_PARSED_TO_DB', false);
 
+require_once APP_DIR . '/JsonLoader.php';
 require_once APP_DIR . '/Scanner.php';
 require_once APP_DIR . '/Category.php';
 
@@ -59,8 +60,10 @@ $urls = [
 
 
 // DETECT CYCLE!
-$scanner = new Scanner(__DIR__ . '/apps.json');
-$category = new Category(__DIR__ . '/apps.json');
+$loader = new JsonLoader();
+
+$scanner = new Scanner($loader, __DIR__ . '/apps.json');
+$category = new Category($loader, __DIR__ . '/apps.json');
 
 if (SAVE_PARSED_TO_DB) {
     $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
