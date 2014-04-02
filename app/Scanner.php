@@ -53,10 +53,9 @@ class Scanner
             $headers = $curl->getResponseHeaders();
             $pageContent = $curl->getResponseHtml();
         } catch (Exception $e) {
-            throw $e;
+            return [ ['name' => $url, 'error' => $e->getMessage()] ];
         }
 
-        
         /**
          * $appsStack = [
          *      [

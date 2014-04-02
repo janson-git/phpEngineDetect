@@ -91,6 +91,7 @@ if (SAVE_PARSED_TO_DB) {
         }
         .icon img {
             margin-left: 10px;
+            margin-right: 10px;
             width: 15px;
             height: 15px;
         }
@@ -139,22 +140,33 @@ foreach ($urls as $url) {
 
     // AND DISPLAY RESULT
     ?>
-    <div class="url"><?= $url ?></div>
-    <div class="engine">&nbsp;
-    <?php
-    foreach ($apps as $app) {
-        $categories = $app['categories'];
-        array_walk($categories, function(&$item) use($category) {
-                $item = $category->getCategoryById($item);
-            });
-        ?>
-        <div class="icon">
-            <img src="http://scanner.loc/images/icons/<?= $app['name'] ?>.png" title="<?= $app['name'] ?>"><?= $app['name'] ?>
-            <span class="appType">(<?= implode(', ', $categories) ?>)</span>
-        </div>
+    <div>
+            
+        <div class="url"><?= $url ?></div>
+        <div class="engine">
         <?php
-    }
-    ?>
+        foreach ($apps as $app) {
+            
+            if (isset($app['error'])) {
+                ?>
+                <div class="icon"><?= $app['error'] ?></div>
+                <?php
+                continue;
+            }
+            
+            $categories = $app['categories'];
+            array_walk($categories, function(&$item) use($category) {
+                    $item = $category->getCategoryById($item);
+                });
+            ?>
+            <div class="icon">
+                <img src="http://scanner.loc/images/icons/<?= $app['name'] ?>.png" title="<?= $app['name'] ?>"><?= $app['name'] ?>
+                <span class="appType">(<?= implode(', ', $categories) ?>)</span>
+            </div>
+            <?php
+        }
+        ?>
+        </div>
     </div>
     <div class="separator"></div>
 <?php
