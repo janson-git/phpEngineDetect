@@ -3,26 +3,24 @@
 define('APP_DIR', __DIR__ . '/app');
 define('SAVE_PARSED_TO_DB', false);
 
-require_once APP_DIR . '/FileLoader.php';
-require_once APP_DIR . '/Scanner.php';
-require_once APP_DIR . '/Category.php';
+spl_autoload_register(function($className) {
+        $classPath = APP_DIR . '/' . $className . '.php';
+        if (!file_exists($classPath)) {
+            throw new Exception("Class '{$className}' not found to auto load");
+        }
+        require_once $classPath;
+    });
 
-// проверяем детектирование на этих страницах
-//$urls = [
-//    'http://nvbinder.wordpress.com',
-//    'http://asimplelifeincolorado.wordpress.com/2014/03/23/letting-down-my-guard-and-writing-what-i-want-to-write/',
-//    'http://dle-news.ru/',
-//    'https://www.1c-bitrix.ru/',
-//];
 
-// а это - локально сохранённые тестовые страницы. Для более быстрой отладки
 $urls = [
+    // local test pages
     'http://scanner.loc/local_pages/testwppage.html?bigWAdminID=',
     'http://scanner.loc/local_pages/dlepage.html',
     'http://scanner.loc/local_pages/bitrixpage.html',
+    
+    // other urls
 //    'http://google.com',
 //    'http://yandex.ru',
-//
 //    'http://joomla.org',
 //    'http://wordpress.org',
 //    'https://github.com',
