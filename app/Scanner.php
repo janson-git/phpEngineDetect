@@ -7,7 +7,7 @@
 class Scanner
 {
     const UNKNOWN = 'unknown';
-    /** @var  JsonLoader */
+    /** @var  FileLoader */
     protected $jsonLoader;
     protected $apps;
 
@@ -20,10 +20,10 @@ class Scanner
     ;
 
     /**
-     * @param JsonLoader $loader
+     * @param FileLoader $loader
      * @param string|null $fullJsonPath
      */
-    public function __construct(JsonLoader $loader, $fullJsonPath = null)
+    public function __construct(FileLoader $loader, $fullJsonPath = null)
     {
         $this->jsonLoader = $loader;
         
