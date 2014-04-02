@@ -1,7 +1,7 @@
 <?php
 
 define('APP_DIR', __DIR__ . '/app');
-define('SAVE_PARSED_TO_DB', false);
+define('SAVE_PARSED_TO_DB', true);
 
 spl_autoload_register(function($className) {
         $classPath = APP_DIR . '/' . $className . '.php';
@@ -21,8 +21,8 @@ $urls = [
     // other urls
 //    'http://google.com',
 //    'http://yandex.ru',
-//    'http://joomla.org',
-//    'http://wordpress.org',
+    'http://joomla.org',
+    'http://wordpress.org',
 //    'https://github.com',
 ];
 
@@ -103,6 +103,11 @@ if (SAVE_PARSED_TO_DB) {
 <body>
 
 <?php
+
+$curl = new Curl();
+$scanner->setCurl($curl);
+
+
 foreach ($urls as $url) {
     // проверим - есть ли у нас уже запись по этому сайту. Если есть - не нужно добавлять.
     if (SAVE_PARSED_TO_DB) {
@@ -112,15 +117,18 @@ foreach ($urls as $url) {
             // если нет - распознаём и сохраняем данные
             $apps = $scanner->detect($url);
 
-            $data = json_encode($apps, JSON_UNESCAPED_UNICODE);
-            $data = pg_escape_string($data);
-            $url = pg_escape_string($url);
-
             // TODO: save site data to separate table with many-to-many links site<->apps
             // SAVE TO DB
             $db->beginTransaction();
             try {
-                $sql = "INSERT INTO site (url, site_data) VALUES ('{$url}', '{$data}')";
+                $data = json_encode($apps, JSON_UNESCAPED_UNICODE);
+                $data = pg_escape_string($data);
+                $url = pg_escape_string($url);
+                
+                $headers = pg_escape_string($scanner->getRawHeaders());
+                $html = pg_escape_string($scanner->getHtml());
+                
+                $sql = "INSERT INTO site (url, site_data, headers, html) VALUES ('{$url}', '{$data}', '{$headers}', '{$html}')";
                 $db->query($sql);
             } catch (Exception $e) {
                 $db->rollBack();

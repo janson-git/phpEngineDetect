@@ -10,6 +10,7 @@
      
      protected $url;
      protected $host;
+     protected $rawHeaders;
      protected $headers;
      protected $html;
      
@@ -72,6 +73,9 @@
          $headers = preg_split('/^\s*$/m', trim($headers));
          // get last headers, after all redirects
          $headers = end($headers);
+         
+         $this->rawHeaders = $headers;
+         
          $headers = str_replace("\r", "", $headers);
          $lines = array_slice(explode("\n", $headers), 1);
          foreach ( $lines as $line ) {
@@ -84,6 +88,12 @@
 
          $this->html = $response;
          $this->html = mb_check_encoding($this->html, 'UTF-8') ? $this->html : utf8_encode($this->html);
+     }
+     
+     
+     public function getRawHeaders()
+     {
+         return $this->rawHeaders;
      }
      
      public function getResponseHeaders()
