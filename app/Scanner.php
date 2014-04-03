@@ -10,8 +10,6 @@ class Scanner
     /** @var  FileLoader */
     protected $jsonLoader;
     protected $apps;
-    /** @var  Curl */
-    protected $curl;
 
     /**
      * @param FileLoader $loader
@@ -24,11 +22,6 @@ class Scanner
         if (!is_null($fullJsonPath)) {
             $this->loadAppsRules($fullJsonPath);
         }
-    }
-    
-    public function setCurl(Curl $curl)
-    {
-        $this->curl = $curl;
     }
 
     /**
@@ -48,20 +41,8 @@ class Scanner
     }
     
 
-    public function detect($url)
+    public function detect($url, $headers, $pageContent)
     {
-        list($url) = explode('#', $url, 1);
-
-        try {
-            $curl = $this->curl;
-            $curl->load($url);
-
-            $headers = $curl->getResponseHeaders();
-            $pageContent = $curl->getResponseHtml();
-        } catch (Exception $e) {
-            return [ ['name' => $url, 'error' => $e->getMessage()] ];
-        }
-
         /**
          * $appsStack = [
          *      [
@@ -139,22 +120,6 @@ class Scanner
         return $appsStack;
     }
     
-    
-    public function getRawHeaders()
-    {
-        return $this->curl->getRawHeaders();
-    }
-    
-    public function getHeaders()
-    {
-        return $this->curl->getResponseHeaders();
-    }
-
-    public function getHtml()
-    {
-        return $this->curl->getResponseHtml();
-    }
-
 
     private function isHtmlMatch($pattern, $content)
     {

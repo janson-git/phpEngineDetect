@@ -12,7 +12,6 @@ spl_autoload_register(function($className) {
 
 
 require_once __DIR__ . '/lib/RollingCurl.php';
-//require_once __DIR__ . '/lib/RollingCurl.php';
 
 $urls = [
     // local test pages
@@ -77,9 +76,8 @@ $urls = [
 
 
 // DETECT CYCLE!
-$loader = new FileLoader();
-
-$scanner = new Scanner($loader, __DIR__ . '/apps.json');
+$loader   = new FileLoader();
+$scanner  = new Scanner($loader, __DIR__ . '/apps.json');
 $category = new Category($loader, __DIR__ . '/apps.json');
 
 $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
@@ -125,17 +123,13 @@ $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
 
 <?php
 
-$curl = new Curl();
-$scanner->setCurl($curl);
-
-
 foreach ($urls as $url) {
     // проверим - есть ли у нас уже запись по этому сайту. Если есть - не нужно добавлять.
     $isset = $db->query("SELECT * FROM site WHERE url = '{$url}'")->fetch(PDO::FETCH_ASSOC);
 
     if (empty($isset)) {
         $apps = [
-            0 => ['error' => 'Not parsed'],
+            ['error' => 'Not parsed'],
         ];
     } else {
         $apps = json_decode($isset['site_data'], true);

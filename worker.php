@@ -12,14 +12,12 @@ spl_autoload_register(function($className) {
 
 
 // DETECT
-$loader = new FileLoader();
-
+$loader  = new FileLoader();
 $scanner = new Scanner($loader, __DIR__ . '/apps.json');
+$curl    = new Curl();
 
 $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
 
-$curl = new Curl();
-$scanner->setCurl($curl);
 
 $url = urldecode($_REQUEST['url']);
 $url = filter_var($url, FILTER_VALIDATE_URL);
@@ -30,9 +28,20 @@ if ($url !== false) {
 
     
     // если нет - распознаём и сохраняем данные
-    $apps = $scanner->detect($url);
+    try {
+        list($url) = explode('#', $url, 1);
+        $curl->load($url);
 
-    // TODO: save site data to separate table with many-to-many links site<->apps
+        $pageHeaders = $curl->getResponseHeaders();
+        $pageContent = $curl->getResponseHtml();
+
+        $apps = $scanner->detect($url, $pageHeaders, $pageContent);
+        
+    } catch (Exception $e) {
+        $apps = [ ['name' => $url, 'error' => $e->getMessage()] ];
+    }
+    
+    
     // SAVE TO DB
     $db->beginTransaction();
     try {
@@ -40,14 +49,14 @@ if ($url !== false) {
         $data = pg_escape_string($data);
         $url = pg_escape_string($url);
 
-        $headers = pg_escape_string($scanner->getRawHeaders());
-        $html = pg_escape_string($scanner->getHtml());
+        $rawHeaders = pg_escape_string($curl->getRawHeaders());
+        $html = pg_escape_string($curl->getResponseHtml());
 
         if (empty($isset)) {
-            $sql = "INSERT INTO site (url, site_data, headers, html) VALUES ('{$url}', '{$data}', '{$headers}', '{$html}')";
+            $sql = "INSERT INTO site (url, site_data, headers, html) VALUES ('{$url}', '{$data}', '{$rawHeaders}', '{$html}')";
         } else {
             $id = $isset['id'];
-            $sql = "UPDATE site SET site_data = '{$data}', headers = '{$headers}', html = '{$html}' WHERE id = {$id}";
+            $sql = "UPDATE site SET site_data = '{$data}', headers = '{$rawHeaders}', html = '{$html}' WHERE id = {$id}";
         }
         $db->query($sql);
     } catch (Exception $e) {
