@@ -1,17 +1,7 @@
 <?php
 set_time_limit(0);
 
-define('APP_DIR', __DIR__ . '/app');
-define('SAVE_PARSED_TO_DB', true);
-
-spl_autoload_register(function($className) {
-        $classPath = APP_DIR . '/' . $className . '.php';
-        if (!file_exists($classPath)) {
-            throw new Exception("Class '{$className}' not found to auto load");
-        }
-        require_once $classPath;
-    });
-
+require_once __DIR__ . '/bootstrap.php';
 
 
 $urls = [
