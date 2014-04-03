@@ -1,7 +1,6 @@
 <?php
 
 define('APP_DIR', __DIR__ . '/app');
-define('SAVE_PARSED_TO_DB', true);
 
 spl_autoload_register(function($className) {
         $classPath = APP_DIR . '/' . $className . '.php';
@@ -83,9 +82,7 @@ $loader = new FileLoader();
 $scanner = new Scanner($loader, __DIR__ . '/apps.json');
 $category = new Category($loader, __DIR__ . '/apps.json');
 
-if (SAVE_PARSED_TO_DB) {
-    $db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
-}
+$db = new \PDO("pgsql:dbname=test;host=localhost", 'postgres', 'postgres');
 
 ?>
 <html>
@@ -118,6 +115,10 @@ if (SAVE_PARSED_TO_DB) {
         .appType {
             color: #ccc;
         }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
      </style>
 </head>
 <body>
@@ -130,42 +131,17 @@ $scanner->setCurl($curl);
 
 foreach ($urls as $url) {
     // проверим - есть ли у нас уже запись по этому сайту. Если есть - не нужно добавлять.
-    if (SAVE_PARSED_TO_DB) {
-        $isset = $db->query("SELECT * FROM site WHERE url = '{$url}'")->fetch(PDO::FETCH_ASSOC);
+    $isset = $db->query("SELECT * FROM site WHERE url = '{$url}'")->fetch(PDO::FETCH_ASSOC);
 
-        if (empty($isset)) {
-            // если нет - распознаём и сохраняем данные
-            $apps = $scanner->detect($url);
-
-            // TODO: save site data to separate table with many-to-many links site<->apps
-            // SAVE TO DB
-            $db->beginTransaction();
-            try {
-                $data = json_encode($apps, JSON_UNESCAPED_UNICODE);
-                $data = pg_escape_string($data);
-                $url = pg_escape_string($url);
-                
-                $headers = pg_escape_string($scanner->getRawHeaders());
-                $html = pg_escape_string($scanner->getHtml());
-                
-                $sql = "INSERT INTO site (url, site_data, headers, html) VALUES ('{$url}', '{$data}', '{$headers}', '{$html}')";
-                $db->query($sql);
-            } catch (Exception $e) {
-                $db->rollBack();
-                throw $e;
-            }
-            $db->commit();
-
-        } else {
-            // если есть - берём данные из БД
-            $apps = json_decode($isset['site_data'], true);
-        }
-
+    if (empty($isset)) {
+        $apps = [
+            0 => ['error' => 'Not parsed'],
+        ];
     } else {
-        $apps = $scanner->detect($url);
+        $apps = json_decode($isset['site_data'], true);
     }
-    
 
+    
     // AND DISPLAY RESULT
     ?>
     <div>
@@ -180,7 +156,7 @@ foreach ($urls as $url) {
                 
                 if (isset($app['error'])) {
                     ?>
-                    <div class="icon"><?= $app['error'] ?></div>
+                    <div class="icon error"><?= $app['error'] ?></div>
                     <?php
                     continue;
                 }
