@@ -11,6 +11,7 @@ spl_autoload_register(function($className) {
                 throw new Exception("Class '{$className}' not found to auto load");
             }
             require_once $classPath;
+            return true;
         }
         return false;
     });

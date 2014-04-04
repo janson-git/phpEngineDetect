@@ -40,9 +40,33 @@ class Scanner
         $this->apps = $decoded['apps'];
     }
     
+    
+    protected function parseHeadersStringToArray($headers)
+    {
+        $headersArray = [];
+        
+        $headers = preg_split('/^\s*$/m', trim($headers));
+        // get last headers, after all redirects
+        $headers = end($headers);
+
+        $headers = str_replace("\r", "", $headers);
+        $lines = array_slice(explode("\n", $headers), 1);
+        foreach ( $lines as $line ) {
+            if ( strpos(trim($line), ': ') !== false ) {
+                list($key, $value) = explode(': ', $line);
+
+                $headersArray[strtolower($key)] = $value;
+            }
+        }
+        return $headersArray;
+    }
 
     public function detect($url, $headers, $pageContent)
     {
+        if (!is_array($headers) && !empty($headers) && is_string($headers)) {
+            $headers = $this->parseHeadersStringToArray($headers);
+        }
+        
         /**
          * $appsStack = [
          *      [
@@ -58,7 +82,6 @@ class Scanner
         $appsStack = [];
         foreach ($this->apps as $appName => $app) {
             $categories = $app['cats'];
-            
             foreach ($app as $type => $sample) {
 
                 switch ($type) {
@@ -66,7 +89,7 @@ class Scanner
                         $sample = $this->parse($sample);
                         foreach ($sample as $item) {
                             $pattern = $item['regex'];
-                            if (preg_match("#{$pattern}#", $url)) {
+                            if (preg_match("#{$pattern}#i", $url)) {
                                 $appsStack[$appName] = $this->setDetected($sample, $type, $url);
                                 break;
                             }
@@ -127,7 +150,7 @@ class Scanner
 
         foreach ($pattern as $item) {
             $string = $item['regex'];
-            $test = "#{$string}#";
+            $test = "#{$string}#i";
             if (preg_match($test, $content)) {
                 return true;
             }
@@ -140,7 +163,7 @@ class Scanner
         $patterns = $this->parse($pattern);
         
         foreach ($patterns as $pattern) {
-            $test = "#{$pattern['regex']}#";
+            $test = "#{$pattern['regex']}#i";
             if (preg_match($test, $content)) {
                 return true;
             }
@@ -158,7 +181,7 @@ class Scanner
                 $metaContent = $this->parse($metaContent);
                 foreach ($metaContent as $item) {
                     $pattern = $item['regex'];
-                    if (count($matches) == 4 && preg_match("#{$pattern}#", $matches[2])) {
+                    if (count($matches) == 4 && preg_match("#{$pattern}#i", $matches[2])) {
                         return true;
                     }
                 }
@@ -174,7 +197,7 @@ class Scanner
             if (isset($headers[strtolower($headerName)])) {
                 foreach ($headerContent as $headerData) {
                     $pattern = $headerData['regex'];
-                    @$matched = preg_match("#{$pattern}#", $headers[strtolower($headerName)]);
+                    @$matched = preg_match("#{$pattern}#i", $headers[strtolower($headerName)]);
                     if ($matched) {
                         return true;
                     }

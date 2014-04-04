@@ -5,34 +5,35 @@ require_once __DIR__ . '/bootstrap.php';
 
 
 $urls = [
-    // local test pages
-    'http://scanner.loc/local_pages/testwppage.html?bigWAdminID=',
-    'http://scanner.loc/local_pages/dlepage.html',
-    'http://scanner.loc/local_pages/bitrixpage.html',
-    
-    // other urls
-    'http://www.php.net/manual/ru/gearman.examples-reverse-task.php',
-    'http://google.com',
-    'http://yandex.ru',
-    'http://joomla.org',
-    'http://wordpress.org',
-    'https://github.com',
-    
-    'http://citehr.com',
-    'http://bls.gov/home.htm',
-    'http://salary.com',
-    'http://payscale.com',
-    'http://socialsecurity.gov',
-    'http://hewitt.com',
-    'http://dol.gov',
-    'http://humanresources.about.com',
-    'http://dalecarnegie.com',
-    'http://doleta.gov',
-    'http://mercer.com',
-    'http://astd.org',
-    'http://brightscope.com',
-    'http://tmp.com',
-    'http://trinet.com',
+//    // local test pages
+//    'http://scanner.loc/local_pages/testwppage.html?bigWAdminID=',
+//    'http://scanner.loc/local_pages/dlepage.html',
+//    'http://scanner.loc/local_pages/bitrixpage.html',
+//    
+//    // other urls
+//    'http://www.php.net/manual/ru/gearman.examples-reverse-task.php',
+//    'http://google.com',
+//    'http://yandex.ru',
+//    'http://joomla.org',
+//    'http://wordpress.org',
+//    'https://github.com',
+//    
+//    'http://citehr.com',
+//    'http://bls.gov/home.htm',
+//    'http://salary.com',
+//    'http://payscale.com',
+//    'http://socialsecurity.gov',
+//    'http://hewitt.com',
+//    'http://dol.gov',
+//    'http://humanresources.about.com',
+//    'http://dalecarnegie.com',
+//    'http://doleta.gov',
+//    'http://mercer.com',
+//    'http://astd.org',
+//    'http://brightscope.com',
+//    'http://tmp.com',
+//    'http://trinet.com',
+    'http://www.sitepoint.com',
 ];
 
 // немного URL с сайта alexa.com из категории Business/HR
