@@ -41,7 +41,7 @@ if ($url !== false) {
         $data = pg_escape_string($data);
         $url = pg_escape_string($url);
 
-        $rawHeaders = pg_escape_string($curl->getRawHeaders());
+        $rawHeaders = pg_escape_string($curl->getResponseHeaders());
         $html = pg_escape_string($curl->getResponseHtml());
 
         if (empty($isset)) {
@@ -56,5 +56,4 @@ if ($url !== false) {
         throw $e;
     }
     $db->commit();
-
 }

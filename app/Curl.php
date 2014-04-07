@@ -10,7 +10,6 @@
      
      protected $url;
      protected $host;
-     protected $rawHeaders;
      protected $headers;
      protected $html;
      
@@ -72,33 +71,33 @@
 
          $headers = preg_split('/^\s*$/m', trim($headers));
          // get last headers, after all redirects
-         $headers = end($headers);
+         $this->headers = end($headers);
          
-         $this->rawHeaders = $headers;
-         
-         $headers = str_replace("\r", "", $headers);
-         $lines = array_slice(explode("\n", $headers), 1);
-         foreach ( $lines as $line ) {
-             if ( strpos(trim($line), ': ') !== false ) {
-                 list($key, $value) = explode(': ', $line);
-
-                 $this->headers[strtolower($key)] = $value;
-             }
-         }
-
          $this->html = $response;
          $this->html = mb_check_encoding($this->html, 'UTF-8') ? $this->html : utf8_encode($this->html);
      }
      
-     
-     public function getRawHeaders()
+     /**
+      * Returns headers of response. If given $asArray = true, than returns array of headers. String otherwise.
+      * @param bool $asArray
+      * @return array
+      */
+     public function getResponseHeaders($asArray = false)
      {
-         return $this->rawHeaders;
-     }
+         if (!$asArray) {
+             return $this->headers;
+         }
      
-     public function getResponseHeaders()
-     {
-         return $this->headers;
+         $headersArray = [];
+         $headers = str_replace("\r", "", $this->headers);
+         $lines = array_slice(explode("\n", $headers), 1);
+         foreach ( $lines as $line ) {
+             if ( strpos(trim($line), ': ') !== false ) {
+                 list($key, $value) = explode(': ', $line);
+                 $headersArray[strtolower($key)] = $value;
+             }
+         }
+         return $headersArray;
      }
 
      public function getResponseHtml()
